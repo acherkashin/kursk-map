@@ -7,12 +7,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "generate:thumbnails": "node scripts/generate-thumbnails.mjs"
   },
   "dependencies": {
     "maplibre-gl": "^5.3.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "sharp": "^0.34.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",

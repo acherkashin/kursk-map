@@ -22,6 +22,12 @@ describe("loadPlaces", () => {
     expect(firstPlace.detailsUrl.startsWith("https://gokursk.ru/")).toBe(true);
   });
 
+  it("uses a thumbnail field when it is available in the source data", () => {
+    const firstPlace = places[0];
+
+    expect(firstPlace.thumbnailUrl).toBeTruthy();
+  });
+
   it("normalizes description text safely and preserves readable line breaks", () => {
     const placeWithBreaks = places.find((place) => place.description.includes("\n"));
 

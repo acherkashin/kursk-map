@@ -37,6 +37,7 @@ export function normalizePlaces(raw: RawFeatureCollection): Place[] {
     const description = normalizeDescription(content.description);
     const imageUrl = new URL(content.image, BASE_URL).toString();
     const detailsUrl = new URL(content.url, BASE_URL).toString();
+    const thumbnailUrl = content.thumbnail?.trim() ? content.thumbnail.trim() : imageUrl;
 
     return {
       id: feature.properties.id ?? feature.id,
@@ -48,6 +49,7 @@ export function normalizePlaces(raw: RawFeatureCollection): Place[] {
       lon,
       images: [imageUrl],
       imageUrl,
+      thumbnailUrl,
       detailsUrl,
       section: feature.properties.section,
       categoryType: feature.properties.type,

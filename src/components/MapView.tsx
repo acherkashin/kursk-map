@@ -76,9 +76,10 @@ export function MapView({ places, activePlace, onSelectPlace }: MapViewProps) {
       element.dataset.placeId = String(place.id);
 
       const image = document.createElement("img");
-      image.src = place.imageUrl;
+      image.src = place.thumbnailUrl;
       image.alt = place.name;
       image.loading = "lazy";
+      image.decoding = "async";
       element.appendChild(image);
 
       const marker = new maplibregl.Marker({

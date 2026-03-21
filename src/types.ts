@@ -1,6 +1,7 @@
 export type RawBalloonContent = {
   url: string;
   image: string;
+  thumbnail?: string;
   name: string;
   description: string;
   address: string;
@@ -38,6 +39,7 @@ export type Place = {
   lon: number;
   images: string[];
   imageUrl: string;
+  thumbnailUrl: string;
   detailsUrl: string;
   section: string;
   categoryType: string;

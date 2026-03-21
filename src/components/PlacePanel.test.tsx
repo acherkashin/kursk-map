@@ -14,6 +14,7 @@ const place: Place = {
   lon: 35.2,
   images: ["https://gokursk.ru/example.jpg"],
   imageUrl: "https://gokursk.ru/example.jpg",
+  thumbnailUrl: "/place-thumbnails/example.webp",
   detailsUrl: "https://gokursk.ru/details",
   section: "8",
   categoryType: "204",
