@@ -153,6 +153,7 @@ a {
   transition:
     transform 160ms ease,
     box-shadow 160ms ease;
+  will-change: transform;
 }
 
 .photo-marker::after {
@@ -180,6 +181,26 @@ a {
   box-shadow:
     0 20px 36px rgba(46, 42, 28, 0.24),
     0 0 0 6px rgba(215, 127, 49, 0.18);
+}
+
+.map-shell.map-is-moving .photo-marker {
+  width: 58px;
+  height: 58px;
+  transition: none;
+  transform: translateY(0) scale(1);
+  box-shadow: 0 6px 18px rgba(46, 42, 28, 0.14);
+}
+
+.map-shell.map-is-moving .photo-marker::after {
+  bottom: -10px;
+  width: 16px;
+  height: 16px;
+}
+
+.map-shell.map-is-moving .photo-marker:hover,
+.map-shell.map-is-moving .photo-marker[data-active="true"] {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 6px 18px rgba(46, 42, 28, 0.14);
 }
 
 .place-panel {
