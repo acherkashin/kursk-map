@@ -30,7 +30,9 @@ type PhotoMarkerRecord = {
 
 const KURSK_CENTER: [number, number] = [36.191112, 51.730361];
 const INITIAL_ZOOM = 11.4;
-const PHOTO_MARKER_ZOOM_THRESHOLD = 12.5;
+const PHOTO_MARKER_ZOOM_THRESHOLD = 15;
+const PLACES_CLUSTER_MAX_ZOOM = 14;
+const ACTIVE_PLACE_FLY_TO_ZOOM = 15.1;
 const PLACES_SOURCE_ID = "places-source";
 const PLACES_CLUSTERS_LAYER_ID = "places-clusters-layer";
 const PLACES_CLUSTER_COUNT_LAYER_ID = "places-cluster-count-layer";
@@ -169,7 +171,7 @@ function addPlacesLayers(map: MapLibreMap, places: Place[]) {
     type: "geojson",
     data: buildPlacesFeatureCollection(places),
     cluster: true,
-    clusterMaxZoom: Math.floor(PHOTO_MARKER_ZOOM_THRESHOLD),
+    clusterMaxZoom: PLACES_CLUSTER_MAX_ZOOM,
     clusterRadius: 54,
   });
 
@@ -509,7 +511,7 @@ export function MapView({ places, activePlace, onSelectPlace }: MapViewProps) {
 
     map.flyTo({
       center: [activePlace.lon, activePlace.lat],
-      zoom: Math.max(map.getZoom(), PHOTO_MARKER_ZOOM_THRESHOLD + 0.1),
+      zoom: Math.max(map.getZoom(), ACTIVE_PLACE_FLY_TO_ZOOM),
       speed: 0.85,
       curve: 1.2,
       padding: isDesktop
