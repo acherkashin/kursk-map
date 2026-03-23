@@ -36,6 +36,10 @@ const PLACES_CLUSTERS_LAYER_ID = "places-clusters-layer";
 const PLACES_CLUSTER_COUNT_LAYER_ID = "places-cluster-count-layer";
 const PLACES_POINTS_LAYER_ID = "places-points-layer";
 
+type MapTestWindow = Window & {
+  __KURSK_MAP_TEST_MAP__?: MapLibreMap;
+};
+
 function buildPlacesFeatureCollection(places: Place[]): PlacesFeatureCollection {
   return {
     type: "FeatureCollection",
@@ -279,6 +283,8 @@ export function MapView({ places, activePlace, onSelectPlace }: MapViewProps) {
       return;
     }
 
+    const shouldExposeMapForE2E = new URLSearchParams(window.location.search).get("e2e") === "1";
+    const testWindow = window as MapTestWindow;
     let isCancelled = false;
     let map: MapLibreMap | null = null;
 
@@ -395,8 +401,13 @@ export function MapView({ places, activePlace, onSelectPlace }: MapViewProps) {
           attributionControl: false,
         });
 
-        map.addControl(new maplibregl.NavigationControl(), "top-left");
         mapRef.current = map;
+
+        if (shouldExposeMapForE2E) {
+          testWindow.__KURSK_MAP_TEST_MAP__ = map;
+        }
+
+        map.addControl(new maplibregl.NavigationControl(), "top-left");
 
         map.on("load", handleLoad);
         map.on("click", PLACES_CLUSTERS_LAYER_ID, handleClusterClick);
@@ -437,6 +448,7 @@ export function MapView({ places, activePlace, onSelectPlace }: MapViewProps) {
       }
 
       mapRef.current = null;
+      delete testWindow.__KURSK_MAP_TEST_MAP__;
       setIsMapReady(false);
     };
   }, []);
