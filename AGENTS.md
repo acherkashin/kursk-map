@@ -11,6 +11,7 @@ Single-app frontend на `Vite + React + TypeScript` для интерактив
 # Project Structure
 ```text
 .
+├── DESIGN_SYSTEM.md              # standalone спецификация будущей UI дизайн-системы
 ├── src/                           # основной код приложения
 │   ├── components/                # UI-компоненты карты и боковой панели
 │   └── test/                      # test setup и вспомогательная тестовая инфраструктура

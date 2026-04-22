@@ -237,6 +237,24 @@ async function getMapZoom(page: Parameters<typeof test>[0]["page"]) {
   });
 }
 
+async function getLayoutMetrics(page: Parameters<typeof test>[0]["page"]) {
+  return page.evaluate(() => {
+    const panel = document.querySelector<HTMLElement>(".place-panel:not(.place-panel--empty)");
+    const panelScroll = document.querySelector<HTMLElement>(".panel-scroll");
+    const mapFrame = document.querySelector<HTMLElement>(".map-frame");
+
+    return {
+      documentScrollHeight: document.documentElement.scrollHeight,
+      viewportHeight: window.innerHeight,
+      panelExists: Boolean(panel),
+      panelScrollExists: Boolean(panelScroll),
+      panelScrollOverflowY: panelScroll ? window.getComputedStyle(panelScroll).overflowY : null,
+      panelScrollClientHeight: panelScroll?.clientHeight ?? 0,
+      mapFrameBottom: mapFrame?.getBoundingClientRect().bottom ?? null,
+    };
+  });
+}
+
 async function selectPlaceById(
   page: Parameters<typeof test>[0]["page"],
   placeId: number,
@@ -342,4 +360,41 @@ test("selecting a place zooms the map into the photo marker range", async ({ pag
   await expect
     .poll(async () => page.locator('.photo-marker[data-active="true"]').count())
     .toBe(1);
+});
+
+test("selecting a place keeps the page locked to the viewport and scrolls inside the panel", async ({
+  page,
+}) => {
+  await page.goto("/?e2e=1");
+
+  await waitForMap(page);
+  await waitForClusterLayers(page);
+
+  const placeIds = await getPlaceIds(page);
+  const targetPlaceId = placeIds[0];
+
+  expect(targetPlaceId).toBeDefined();
+
+  const didSelectPlace = await selectPlaceById(page, targetPlaceId!);
+
+  expect(didSelectPlace).toBe(true);
+
+  await expect
+    .poll(async () => getMapZoom(page))
+    .toBeGreaterThanOrEqual(15);
+
+  await expect
+    .poll(async () => getLayoutMetrics(page))
+    .toMatchObject({
+      panelExists: true,
+      panelScrollExists: true,
+      panelScrollOverflowY: "auto",
+    });
+
+  const layoutMetrics = await getLayoutMetrics(page);
+
+  expect(layoutMetrics.documentScrollHeight).toBeLessThanOrEqual(layoutMetrics.viewportHeight);
+  expect(layoutMetrics.mapFrameBottom).not.toBeNull();
+  expect(layoutMetrics.mapFrameBottom!).toBeLessThanOrEqual(layoutMetrics.viewportHeight);
+  expect(layoutMetrics.panelScrollClientHeight).toBeGreaterThan(0);
 });
