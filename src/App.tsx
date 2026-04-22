@@ -45,15 +45,6 @@ export default function App() {
     <div className="app-shell">
       <main className="experience-layout">
         <section className="map-stage">
-          <div className="hero-card">
-            <span className="eyebrow">Куда поехать на выходных</span>
-            <h1>Карта лучших мест Курской области</h1>
-            <p>
-              265 идей для поездки, прогулки или короткого культурного маршрута. Выбирайте точку на
-              карте и открывайте карточку места.
-            </p>
-          </div>
-
           <div className="map-frame">
             <MapView places={places} activePlace={activePlace} onSelectPlace={setActivePlace} />
           </div>
