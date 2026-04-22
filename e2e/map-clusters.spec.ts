@@ -239,9 +239,27 @@ async function getMapZoom(page: Parameters<typeof test>[0]["page"]) {
 
 async function getLayoutMetrics(page: Parameters<typeof test>[0]["page"]) {
   return page.evaluate(() => {
+    const getBackgroundAlpha = (value: string) => {
+      if (!value || value === "transparent") {
+        return 0;
+      }
+
+      const colorMatch = value.match(/rgba?\(([^)]+)\)/);
+
+      if (!colorMatch) {
+        return 1;
+      }
+
+      const parts = colorMatch[1].split(",").map((part) => part.trim());
+      return parts.length === 4 ? Number(parts[3]) : 1;
+    };
+
     const panel = document.querySelector<HTMLElement>(".place-panel:not(.place-panel--empty)");
     const panelScroll = document.querySelector<HTMLElement>(".panel-scroll");
     const mapFrame = document.querySelector<HTMLElement>(".map-frame");
+    const rootStyles = window.getComputedStyle(document.documentElement);
+    const panelStyles = panel ? window.getComputedStyle(panel) : null;
+    const mapFrameStyles = mapFrame ? window.getComputedStyle(mapFrame) : null;
 
     return {
       documentScrollHeight: document.documentElement.scrollHeight,
@@ -251,6 +269,15 @@ async function getLayoutMetrics(page: Parameters<typeof test>[0]["page"]) {
       panelScrollOverflowY: panelScroll ? window.getComputedStyle(panelScroll).overflowY : null,
       panelScrollClientHeight: panelScroll?.clientHeight ?? 0,
       mapFrameBottom: mapFrame?.getBoundingClientRect().bottom ?? null,
+      rootBackgroundImage: rootStyles.backgroundImage,
+      rootBackgroundColor: rootStyles.backgroundColor,
+      rootBackgroundAlpha: getBackgroundAlpha(rootStyles.backgroundColor),
+      mapFrameBackgroundImage: mapFrameStyles?.backgroundImage ?? null,
+      mapFrameBackgroundColor: mapFrameStyles?.backgroundColor ?? null,
+      mapFrameBackgroundAlpha: mapFrameStyles ? getBackgroundAlpha(mapFrameStyles.backgroundColor) : null,
+      panelBackgroundImage: panelStyles?.backgroundImage ?? null,
+      panelBackgroundColor: panelStyles?.backgroundColor ?? null,
+      panelBackgroundAlpha: panelStyles ? getBackgroundAlpha(panelStyles.backgroundColor) : null,
     };
   });
 }
@@ -397,4 +424,8 @@ test("selecting a place keeps the page locked to the viewport and scrolls inside
   expect(layoutMetrics.mapFrameBottom).not.toBeNull();
   expect(layoutMetrics.mapFrameBottom!).toBeLessThanOrEqual(layoutMetrics.viewportHeight);
   expect(layoutMetrics.panelScrollClientHeight).toBeGreaterThan(0);
+  expect(layoutMetrics.rootBackgroundImage).not.toBe("none");
+  expect(layoutMetrics.mapFrameBackgroundAlpha).toBe(0);
+  expect(layoutMetrics.panelBackgroundAlpha).not.toBeNull();
+  expect(layoutMetrics.panelBackgroundAlpha!).toBeLessThan(0.5);
 });
