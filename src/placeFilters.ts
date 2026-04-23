@@ -1,14 +1,24 @@
 import type { Place } from "./types";
 
+export function normalizeSearchValue(value: string) {
+  return value
+    .trim()
+    .toLocaleLowerCase("ru-RU")
+    .replaceAll("ё", "е")
+    .replace(/[\s.,/#!$%^&*;:{}=\-_`~()«»"'?<>[\]\\|+]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function matchesSearchQuery(place: Place, query: string) {
-  const normalizedQuery = query.trim().toLocaleLowerCase("ru-RU");
+  const normalizedQuery = normalizeSearchValue(query);
 
   if (!normalizedQuery) {
     return true;
   }
 
   return [place.name, place.address, place.description].some((value) =>
-    value.toLocaleLowerCase("ru-RU").includes(normalizedQuery),
+    normalizeSearchValue(value).includes(normalizedQuery),
   );
 }
 

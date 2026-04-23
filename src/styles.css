@@ -112,11 +112,19 @@ button {
   z-index: 3;
   top: 24px;
   left: 24px;
+  right: 24px;
   display: flex;
   align-items: center;
   gap: 14px;
-  width: min(760px, calc(100vw - 48px));
+  width: auto;
+  max-width: 760px;
   pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .experience-layout--panel-open .floating-controls {
+    right: calc(48px + min(400px, calc(100vw - 48px)));
+  }
 }
 
 .brand-card,

@@ -1,5 +1,4 @@
-import { cleanup, render, screen, within } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { Place } from "./types";
 
@@ -39,25 +38,33 @@ describe("App filters", () => {
     expect(screen.queryByRole("button", { name: "Курск" })).not.toBeInTheDocument();
   });
 
-  it("filters places by search query", async () => {
-    const user = userEvent.setup();
-    const { default: App } = await import("./App");
+  it("updates the input immediately and filters after the debounce settles", async () => {
+    const { SEARCH_DEBOUNCE_MS, default: App } = await import("./App");
 
     render(<App />);
 
-    await user.type(screen.getByRole("searchbox", { name: "Поиск мест" }), "Марьино");
+    const input = screen.getByRole("searchbox", { name: "Поиск мест" });
+    fireEvent.change(input, { target: { value: "Марьино" } });
 
-    expect(screen.getByTestId("mock-map")).toHaveTextContent("Марьино");
+    expect(input).toHaveValue("Марьино");
+    expect(screen.getByTestId("mock-map")).toHaveTextContent(
+      "Государственное управление Банка России по Курской области",
+    );
+
+    await new Promise((resolve) => window.setTimeout(resolve, SEARCH_DEBOUNCE_MS + 40));
+
+    await waitFor(() => {
+      expect(screen.getByTestId("mock-map")).toHaveTextContent("Марьино");
+    });
   });
 
   it("closes the selected panel when filters exclude the active place", async () => {
-    const user = userEvent.setup();
-    const { default: App } = await import("./App");
+    const { SEARCH_DEBOUNCE_MS, default: App } = await import("./App");
 
     render(<App />);
 
     const map = screen.getByTestId("mock-map");
-    await user.click(
+    fireEvent.click(
       within(map).getByRole("button", {
         name: "Государственное управление Банка России по Курской области",
       }),
@@ -65,8 +72,16 @@ describe("App filters", () => {
 
     expect(screen.getByRole("heading", { name: /Банка России/ })).toBeInTheDocument();
 
-    await user.type(screen.getByRole("searchbox", { name: "Поиск мест" }), "Марьино");
+    fireEvent.change(screen.getByRole("searchbox", { name: "Поиск мест" }), {
+      target: { value: "Марьино" },
+    });
 
-    expect(screen.queryByRole("heading", { name: /Банка России/ })).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Банка России/ })).toBeInTheDocument();
+
+    await new Promise((resolve) => window.setTimeout(resolve, SEARCH_DEBOUNCE_MS + 40));
+
+    await waitFor(() => {
+      expect(screen.queryByRole("heading", { name: /Банка России/ })).not.toBeInTheDocument();
+    });
   });
 });
