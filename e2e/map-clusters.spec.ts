@@ -254,10 +254,12 @@ async function getLayoutMetrics(page: Parameters<typeof test>[0]["page"]) {
       return parts.length === 4 ? Number(parts[3]) : 1;
     };
 
-    const panel = document.querySelector<HTMLElement>(".place-panel:not(.place-panel--empty)");
+    const panel = document.querySelector<HTMLElement>(".place-panel");
     const panelScroll = document.querySelector<HTMLElement>(".panel-scroll");
     const mapFrame = document.querySelector<HTMLElement>(".map-frame");
-    const zoomInButton = document.querySelector<HTMLElement>(".maplibregl-ctrl-bottom-left .maplibregl-ctrl-zoom-in");
+    const zoomInButton = document.querySelector<HTMLElement>(
+      ".maplibregl-ctrl-bottom-left .maplibregl-ctrl-zoom-in",
+    );
     const toolbar = document.querySelector<HTMLElement>(".floating-controls");
     const brandCard = document.querySelector<HTMLElement>(".brand-card");
     const searchCard = document.querySelector<HTMLElement>(".search-card");
@@ -272,12 +274,19 @@ async function getLayoutMetrics(page: Parameters<typeof test>[0]["page"]) {
 
     return {
       documentScrollHeight: document.documentElement.scrollHeight,
+      viewportWidth: window.innerWidth,
       viewportHeight: window.innerHeight,
       panelExists: Boolean(panel),
       panelScrollExists: Boolean(panelScroll),
       panelScrollOverflowY: panelScroll ? window.getComputedStyle(panelScroll).overflowY : null,
       panelScrollClientHeight: panelScroll?.clientHeight ?? 0,
-      mapFrameBottom: mapFrame?.getBoundingClientRect().bottom ?? null,
+      panelPosition: panelStyles?.position ?? null,
+      panelTop: panelRect?.top ?? null,
+      panelRight: panelRect?.right ?? null,
+      panelBottom: panelRect?.bottom ?? null,
+      panelLeft: panelRect?.left ?? null,
+      panelWidth: panelRect?.width ?? null,
+      panelHeight: panelRect?.height ?? null,
       rootBackgroundImage: rootStyles.backgroundImage,
       rootBackgroundColor: rootStyles.backgroundColor,
       rootBackgroundAlpha: getBackgroundAlpha(rootStyles.backgroundColor),
@@ -287,8 +296,6 @@ async function getLayoutMetrics(page: Parameters<typeof test>[0]["page"]) {
       panelBackgroundImage: panelStyles?.backgroundImage ?? null,
       panelBackgroundColor: panelStyles?.backgroundColor ?? null,
       panelBackgroundAlpha: panelStyles ? getBackgroundAlpha(panelStyles.backgroundColor) : null,
-      panelTop: panelRect?.top ?? null,
-      panelLeft: panelRect?.left ?? null,
       panelRightGap: panelRect ? window.innerWidth - panelRect.right : null,
       panelBottomGap: panelRect ? window.innerHeight - panelRect.bottom : null,
       panelBorderTopLeftRadius: panelStyles?.borderTopLeftRadius ?? null,
@@ -436,13 +443,15 @@ test("selecting a place keeps the page locked to the viewport and scrolls inside
       panelExists: true,
       panelScrollExists: true,
       panelScrollOverflowY: "auto",
+      panelPosition: "fixed",
     });
 
   const layoutMetrics = await getLayoutMetrics(page);
 
   expect(layoutMetrics.documentScrollHeight).toBeLessThanOrEqual(layoutMetrics.viewportHeight);
-  expect(layoutMetrics.mapFrameBottom).not.toBeNull();
-  expect(layoutMetrics.mapFrameBottom!).toBeLessThanOrEqual(layoutMetrics.viewportHeight);
+  expect(layoutMetrics.panelRight).not.toBeNull();
+  expect(layoutMetrics.panelRight!).toBeGreaterThan(layoutMetrics.viewportWidth - 32);
+  expect(layoutMetrics.panelRight!).toBeLessThanOrEqual(layoutMetrics.viewportWidth);
   expect(layoutMetrics.panelScrollClientHeight).toBeGreaterThan(0);
   expect(layoutMetrics.rootBackgroundImage).toBe("none");
   expect(layoutMetrics.rootBackgroundAlpha).toBe(1);
@@ -513,6 +522,8 @@ test("shows the mobile place panel as a fullscreen sheet that hides the map", as
   expect(layoutMetrics.panelBottomGap!).toBeGreaterThanOrEqual(-1);
   expect(layoutMetrics.panelBottomGap!).toBeLessThanOrEqual(1);
   expect(layoutMetrics.panelBorderTopLeftRadius).toBe("0px");
+  expect(layoutMetrics.documentScrollHeight).toBeLessThanOrEqual(layoutMetrics.viewportHeight);
+  expect(layoutMetrics.panelScrollClientHeight).toBeGreaterThan(0);
   expect(layoutMetrics.panelBackgroundAlpha).not.toBeNull();
   expect(layoutMetrics.panelBackgroundAlpha!).toBeGreaterThanOrEqual(0.95);
 });

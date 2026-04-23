@@ -26,6 +26,7 @@ describe("PlacePanel", () => {
     const { container } = render(<PlacePanel place={null} onClose={() => undefined} />);
 
     expect(container).toBeEmptyDOMElement();
+    expect(screen.queryByLabelText("Информация о месте")).not.toBeInTheDocument();
   });
 
   it("renders selected place details and keeps carousel controls safe for a single image", async () => {
