@@ -14,18 +14,7 @@ export function PlacePanel({ place, onClose }: PlacePanelProps) {
   }, [place?.id]);
 
   if (!place) {
-    return (
-      <aside className="place-panel place-panel--empty" aria-label="Информация о месте">
-        <div className="panel-empty-state">
-          <span className="eyebrow">Kursk Weekend Map</span>
-          <h2>Выберите место на карте</h2>
-          <p>
-            Нажмите на фото-маркер, чтобы открыть карточку с описанием, адресом и ссылкой на
-            подробности.
-          </p>
-        </div>
-      </aside>
-    );
+    return null;
   }
 
   const totalImages = place.images.length;
@@ -38,7 +27,7 @@ export function PlacePanel({ place, onClose }: PlacePanelProps) {
       </button>
 
       <div className="panel-scroll">
-        <div className="panel-carousel">
+        <figure className="panel-carousel">
           <img className="panel-image" src={currentImage} alt={place.name} />
           <div className="panel-carousel-controls">
             <button
@@ -61,7 +50,7 @@ export function PlacePanel({ place, onClose }: PlacePanelProps) {
               ›
             </button>
           </div>
-        </div>
+        </figure>
 
         <div className="panel-copy">
           <div className="panel-meta">

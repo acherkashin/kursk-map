@@ -257,9 +257,18 @@ async function getLayoutMetrics(page: Parameters<typeof test>[0]["page"]) {
     const panel = document.querySelector<HTMLElement>(".place-panel:not(.place-panel--empty)");
     const panelScroll = document.querySelector<HTMLElement>(".panel-scroll");
     const mapFrame = document.querySelector<HTMLElement>(".map-frame");
+    const zoomInButton = document.querySelector<HTMLElement>(".maplibregl-ctrl-bottom-left .maplibregl-ctrl-zoom-in");
+    const toolbar = document.querySelector<HTMLElement>(".floating-controls");
+    const brandCard = document.querySelector<HTMLElement>(".brand-card");
+    const searchCard = document.querySelector<HTMLElement>(".search-card");
     const rootStyles = window.getComputedStyle(document.documentElement);
     const panelStyles = panel ? window.getComputedStyle(panel) : null;
     const mapFrameStyles = mapFrame ? window.getComputedStyle(mapFrame) : null;
+    const panelRect = panel?.getBoundingClientRect();
+    const zoomButtonRect = zoomInButton?.getBoundingClientRect();
+    const toolbarRect = toolbar?.getBoundingClientRect();
+    const brandCardRect = brandCard?.getBoundingClientRect();
+    const searchCardRect = searchCard?.getBoundingClientRect();
 
     return {
       documentScrollHeight: document.documentElement.scrollHeight,
@@ -278,6 +287,17 @@ async function getLayoutMetrics(page: Parameters<typeof test>[0]["page"]) {
       panelBackgroundImage: panelStyles?.backgroundImage ?? null,
       panelBackgroundColor: panelStyles?.backgroundColor ?? null,
       panelBackgroundAlpha: panelStyles ? getBackgroundAlpha(panelStyles.backgroundColor) : null,
+      panelTop: panelRect?.top ?? null,
+      panelLeft: panelRect?.left ?? null,
+      panelRightGap: panelRect ? window.innerWidth - panelRect.right : null,
+      panelBottomGap: panelRect ? window.innerHeight - panelRect.bottom : null,
+      panelBorderTopLeftRadius: panelStyles?.borderTopLeftRadius ?? null,
+      zoomControlInBottomLeft: Boolean(zoomInButton),
+      zoomControlLeft: zoomButtonRect?.left ?? null,
+      zoomControlBottomGap: zoomButtonRect ? window.innerHeight - zoomButtonRect.bottom : null,
+      toolbarHeight: toolbarRect?.height ?? null,
+      brandCardHeight: brandCardRect?.height ?? null,
+      searchCardHeight: searchCardRect?.height ?? null,
     };
   });
 }
@@ -424,8 +444,75 @@ test("selecting a place keeps the page locked to the viewport and scrolls inside
   expect(layoutMetrics.mapFrameBottom).not.toBeNull();
   expect(layoutMetrics.mapFrameBottom!).toBeLessThanOrEqual(layoutMetrics.viewportHeight);
   expect(layoutMetrics.panelScrollClientHeight).toBeGreaterThan(0);
-  expect(layoutMetrics.rootBackgroundImage).not.toBe("none");
+  expect(layoutMetrics.rootBackgroundImage).toBe("none");
+  expect(layoutMetrics.rootBackgroundAlpha).toBe(1);
   expect(layoutMetrics.mapFrameBackgroundAlpha).toBe(0);
   expect(layoutMetrics.panelBackgroundAlpha).not.toBeNull();
-  expect(layoutMetrics.panelBackgroundAlpha!).toBeLessThan(0.5);
+  expect(layoutMetrics.panelBackgroundAlpha!).toBeGreaterThanOrEqual(0.95);
+  expect(layoutMetrics.zoomControlInBottomLeft).toBe(true);
+  expect(layoutMetrics.zoomControlLeft).not.toBeNull();
+  expect(layoutMetrics.zoomControlLeft!).toBeLessThan(80);
+  expect(layoutMetrics.zoomControlBottomGap).not.toBeNull();
+  expect(layoutMetrics.zoomControlBottomGap!).toBeLessThan(120);
+});
+
+test("keeps the mobile toolbar compact", async ({ page }) => {
+  await page.setViewportSize({ width: 413, height: 817 });
+  await page.goto("/?e2e=1");
+
+  await waitForMap(page);
+  await waitForClusterLayers(page);
+
+  const layoutMetrics = await getLayoutMetrics(page);
+
+  expect(layoutMetrics.toolbarHeight).not.toBeNull();
+  expect(layoutMetrics.toolbarHeight!).toBeLessThan(110);
+  expect(layoutMetrics.brandCardHeight).not.toBeNull();
+  expect(layoutMetrics.brandCardHeight!).toBeGreaterThanOrEqual(50);
+  expect(layoutMetrics.brandCardHeight!).toBeLessThanOrEqual(54);
+  expect(layoutMetrics.searchCardHeight).not.toBeNull();
+  expect(layoutMetrics.searchCardHeight!).toBeGreaterThanOrEqual(38);
+  expect(layoutMetrics.searchCardHeight!).toBeLessThanOrEqual(42);
+});
+
+test("shows the mobile place panel as a fullscreen sheet that hides the map", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 394, height: 817 });
+  await page.goto("/?e2e=1");
+
+  await waitForMap(page);
+  await waitForClusterLayers(page);
+
+  const placeIds = await getPlaceIds(page);
+  const targetPlaceId = placeIds[0];
+
+  expect(targetPlaceId).toBeDefined();
+
+  const didSelectPlace = await selectPlaceById(page, targetPlaceId!);
+
+  expect(didSelectPlace).toBe(true);
+
+  await expect
+    .poll(async () => getMapZoom(page))
+    .toBeGreaterThanOrEqual(15);
+
+  const layoutMetrics = await getLayoutMetrics(page);
+
+  expect(layoutMetrics.panelExists).toBe(true);
+  expect(layoutMetrics.panelTop).not.toBeNull();
+  expect(layoutMetrics.panelTop!).toBeGreaterThanOrEqual(-1);
+  expect(layoutMetrics.panelTop!).toBeLessThanOrEqual(1);
+  expect(layoutMetrics.panelLeft).not.toBeNull();
+  expect(layoutMetrics.panelLeft!).toBeGreaterThanOrEqual(-1);
+  expect(layoutMetrics.panelLeft!).toBeLessThanOrEqual(1);
+  expect(layoutMetrics.panelRightGap).not.toBeNull();
+  expect(layoutMetrics.panelRightGap!).toBeGreaterThanOrEqual(-1);
+  expect(layoutMetrics.panelRightGap!).toBeLessThanOrEqual(1);
+  expect(layoutMetrics.panelBottomGap).not.toBeNull();
+  expect(layoutMetrics.panelBottomGap!).toBeGreaterThanOrEqual(-1);
+  expect(layoutMetrics.panelBottomGap!).toBeLessThanOrEqual(1);
+  expect(layoutMetrics.panelBorderTopLeftRadius).toBe("0px");
+  expect(layoutMetrics.panelBackgroundAlpha).not.toBeNull();
+  expect(layoutMetrics.panelBackgroundAlpha!).toBeGreaterThanOrEqual(0.95);
 });

@@ -22,10 +22,10 @@ const place: Place = {
 };
 
 describe("PlacePanel", () => {
-  it("renders an empty state when no place is selected", () => {
-    render(<PlacePanel place={null} onClose={() => undefined} />);
+  it("does not render a detail panel when no place is selected", () => {
+    const { container } = render(<PlacePanel place={null} onClose={() => undefined} />);
 
-    expect(screen.getByText("Выберите место на карте")).toBeInTheDocument();
+    expect(container).toBeEmptyDOMElement();
   });
 
   it("renders selected place details and keeps carousel controls safe for a single image", async () => {
