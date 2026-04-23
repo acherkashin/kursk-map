@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { BrandCard } from "./components/BrandCard";
 import { MapView } from "./components/MapView";
 import { PlacePanel } from "./components/PlacePanel";
 import { loadPlaces } from "./data";
+import { filterPlaces } from "./placeFilters";
 import type { Place } from "./types";
 
 const places = loadPlaces();
+export const SEARCH_DEBOUNCE_MS = 180;
 
 type AppTestWindow = Window & {
   __KURSK_MAP_TEST_GET_PLACE_IDS__?: () => number[];
@@ -13,6 +16,33 @@ type AppTestWindow = Window & {
 
 export default function App() {
   const [activePlace, setActivePlace] = useState<Place | null>(null);
+  const [searchInputValue, setSearchInputValue] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const filteredPlaces = useMemo(() => filterPlaces(places, searchQuery), [searchQuery]);
+
+  useEffect(() => {
+    if (searchInputValue === searchQuery) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setSearchQuery(searchInputValue);
+    }, SEARCH_DEBOUNCE_MS);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [searchInputValue, searchQuery]);
+
+  useEffect(() => {
+    if (!activePlace) {
+      return;
+    }
+
+    if (!filteredPlaces.some((place) => place.id === activePlace.id)) {
+      setActivePlace(null);
+    }
+  }, [activePlace, filteredPlaces]);
 
   useEffect(() => {
     const shouldExposeTestApi = new URLSearchParams(window.location.search).get("e2e") === "1";
@@ -43,16 +73,39 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <main className="experience-layout">
+      <main className={`experience-layout${activePlace ? " experience-layout--panel-open" : ""}`}>
         <section className="map-stage">
           <div className="map-frame">
-            <MapView places={places} activePlace={activePlace} onSelectPlace={setActivePlace} />
+            <MapView
+              places={filteredPlaces}
+              activePlace={activePlace}
+              onSelectPlace={setActivePlace}
+            />
           </div>
         </section>
 
-        {activePlace ? (
-          <PlacePanel place={activePlace} onClose={() => setActivePlace(null)} />
+        <section className="floating-controls" aria-label="Поиск и фильтры мест">
+          <BrandCard />
+
+          <label className="search-card">
+            <input
+              type="search"
+              value={searchInputValue}
+              onChange={(event) => setSearchInputValue(event.target.value)}
+              placeholder="Найти место, улицу или район..."
+              aria-label="Поиск мест"
+            />
+          </label>
+        </section>
+
+        {filteredPlaces.length === 0 ? (
+          <section className="empty-map-card" aria-live="polite">
+            <span className="eyebrow">Ничего не найдено</span>
+            <p>Попробуйте другой запрос или сбросьте фильтры, чтобы вернуть все места.</p>
+          </section>
         ) : null}
+
+        <PlacePanel place={activePlace} onClose={() => setActivePlace(null)} />
       </main>
     </div>
   );

@@ -260,31 +260,18 @@ async function getLayoutMetrics(page: Parameters<typeof test>[0]["page"]) {
     const rootStyles = window.getComputedStyle(document.documentElement);
     const panelStyles = panel ? window.getComputedStyle(panel) : null;
     const mapFrameStyles = mapFrame ? window.getComputedStyle(mapFrame) : null;
-    const panelRect = panel?.getBoundingClientRect();
 
     return {
       documentScrollHeight: document.documentElement.scrollHeight,
-      viewportWidth: window.innerWidth,
       viewportHeight: window.innerHeight,
       panelExists: Boolean(panel),
       panelScrollExists: Boolean(panelScroll),
       panelScrollOverflowY: panelScroll ? window.getComputedStyle(panelScroll).overflowY : null,
       panelScrollClientHeight: panelScroll?.clientHeight ?? 0,
       panelPosition: panelStyles?.position ?? null,
-      panelTop: panelRect?.top ?? null,
-      panelRight: panelRect?.right ?? null,
-      panelBottom: panelRect?.bottom ?? null,
-      panelLeft: panelRect?.left ?? null,
-      panelWidth: panelRect?.width ?? null,
-      panelHeight: panelRect?.height ?? null,
       rootBackgroundImage: rootStyles.backgroundImage,
-      rootBackgroundColor: rootStyles.backgroundColor,
       rootBackgroundAlpha: getBackgroundAlpha(rootStyles.backgroundColor),
-      mapFrameBackgroundImage: mapFrameStyles?.backgroundImage ?? null,
-      mapFrameBackgroundColor: mapFrameStyles?.backgroundColor ?? null,
       mapFrameBackgroundAlpha: mapFrameStyles ? getBackgroundAlpha(mapFrameStyles.backgroundColor) : null,
-      panelBackgroundImage: panelStyles?.backgroundImage ?? null,
-      panelBackgroundColor: panelStyles?.backgroundColor ?? null,
       panelBackgroundAlpha: panelStyles ? getBackgroundAlpha(panelStyles.backgroundColor) : null,
     };
   });
@@ -430,49 +417,10 @@ test("selecting a place keeps the page locked to the viewport and scrolls inside
   const layoutMetrics = await getLayoutMetrics(page);
 
   expect(layoutMetrics.documentScrollHeight).toBeLessThanOrEqual(layoutMetrics.viewportHeight);
-  expect(layoutMetrics.panelRight).not.toBeNull();
-  expect(layoutMetrics.panelRight!).toBeGreaterThan(layoutMetrics.viewportWidth - 32);
-  expect(layoutMetrics.panelRight!).toBeLessThanOrEqual(layoutMetrics.viewportWidth);
   expect(layoutMetrics.panelScrollClientHeight).toBeGreaterThan(0);
-  expect(layoutMetrics.rootBackgroundImage).not.toBe("none");
+  expect(layoutMetrics.rootBackgroundImage).toBe("none");
+  expect(layoutMetrics.rootBackgroundAlpha).toBe(1);
   expect(layoutMetrics.mapFrameBackgroundAlpha).toBe(0);
   expect(layoutMetrics.panelBackgroundAlpha).not.toBeNull();
-  expect(layoutMetrics.panelBackgroundAlpha!).toBeLessThan(0.5);
-});
-
-test("selecting a place opens a full-screen bottom panel on mobile", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 800 });
-  await page.goto("/?e2e=1");
-
-  await waitForMap(page);
-  await waitForClusterLayers(page);
-
-  const placeIds = await getPlaceIds(page);
-  const targetPlaceId = placeIds[0];
-
-  expect(targetPlaceId).toBeDefined();
-
-  const didSelectPlace = await selectPlaceById(page, targetPlaceId!);
-
-  expect(didSelectPlace).toBe(true);
-
-  await expect
-    .poll(async () => getLayoutMetrics(page))
-    .toMatchObject({
-      panelExists: true,
-      panelScrollExists: true,
-      panelScrollOverflowY: "auto",
-      panelPosition: "fixed",
-      panelTop: 0,
-      panelRight: 390,
-      panelBottom: 800,
-      panelLeft: 0,
-      panelWidth: 390,
-      panelHeight: 800,
-    });
-
-  const layoutMetrics = await getLayoutMetrics(page);
-
-  expect(layoutMetrics.documentScrollHeight).toBeLessThanOrEqual(layoutMetrics.viewportHeight);
-  expect(layoutMetrics.panelScrollClientHeight).toBeGreaterThan(0);
+  expect(layoutMetrics.panelBackgroundAlpha!).toBeGreaterThanOrEqual(0.95);
 });

@@ -27,7 +27,7 @@ export function PlacePanel({ place, onClose }: PlacePanelProps) {
       </button>
 
       <div className="panel-scroll">
-        <div className="panel-carousel">
+        <figure className="panel-carousel">
           <img className="panel-image" src={currentImage} alt={place.name} />
           <div className="panel-carousel-controls">
             <button
@@ -50,7 +50,7 @@ export function PlacePanel({ place, onClose }: PlacePanelProps) {
               ›
             </button>
           </div>
-        </div>
+        </figure>
 
         <div className="panel-copy">
           <div className="panel-meta">

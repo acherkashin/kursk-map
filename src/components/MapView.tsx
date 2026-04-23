@@ -67,12 +67,21 @@ function createPhotoMarkerElement(place: Place, onSelectPlace: (place: Place) =>
   element.setAttribute("aria-label", `Открыть ${place.name}`);
   element.dataset.placeId = String(place.id);
 
+  const frame = document.createElement("span");
+  frame.className = "photo-marker-frame";
+
   const image = document.createElement("img");
   image.src = place.thumbnailUrl;
   image.alt = place.name;
   image.loading = "lazy";
   image.decoding = "async";
-  element.appendChild(image);
+  frame.appendChild(image);
+  element.appendChild(frame);
+
+  const label = document.createElement("span");
+  label.className = "photo-marker-label";
+  label.textContent = place.name;
+  element.appendChild(label);
 
   element.addEventListener("click", () => onSelectPlace(place));
 
@@ -181,11 +190,11 @@ function addPlacesLayers(map: MapLibreMap, places: Place[]) {
     source: PLACES_SOURCE_ID,
     filter: ["has", "point_count"],
     paint: {
-      "circle-color": ["step", ["get", "point_count"], "#d77f31", 8, "#c4661f", 24, "#8d4a12"],
+      "circle-color": ["step", ["get", "point_count"], "#2e6bff", 8, "#1f5ae8", 24, "#1a4fd6"],
       "circle-radius": ["step", ["get", "point_count"], 16, 8, 20, 24, 26],
-      "circle-stroke-color": "rgba(255, 250, 241, 0.95)",
+      "circle-stroke-color": "rgba(255, 255, 255, 0.96)",
       "circle-stroke-width": 3,
-      "circle-opacity": 0.92,
+      "circle-opacity": 0.9,
     },
   });
 
@@ -213,8 +222,8 @@ function addPlacesLayers(map: MapLibreMap, places: Place[]) {
       "circle-color": [
         "case",
         ["boolean", ["feature-state", "active"], false],
-        "#d77f31",
-        "#8d4a12",
+        "#2e6bff",
+        "#1a4fd6",
       ],
       "circle-radius": [
         "case",
@@ -222,7 +231,7 @@ function addPlacesLayers(map: MapLibreMap, places: Place[]) {
         9,
         6,
       ],
-      "circle-stroke-color": "rgba(255, 250, 241, 0.95)",
+      "circle-stroke-color": "rgba(255, 255, 255, 0.96)",
       "circle-stroke-width": [
         "case",
         ["boolean", ["feature-state", "active"], false],
@@ -409,7 +418,7 @@ export function MapView({ places, activePlace, onSelectPlace }: MapViewProps) {
           testWindow.__KURSK_MAP_TEST_MAP__ = map;
         }
 
-        map.addControl(new maplibregl.NavigationControl(), "top-left");
+        map.addControl(new maplibregl.NavigationControl(), "bottom-left");
 
         map.on("load", handleLoad);
         map.on("click", PLACES_CLUSTERS_LAYER_ID, handleClusterClick);

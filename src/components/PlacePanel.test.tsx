@@ -22,10 +22,10 @@ const place: Place = {
 };
 
 describe("PlacePanel", () => {
-  it("does not render a panel when no place is selected", () => {
-    render(<PlacePanel place={null} onClose={() => undefined} />);
+  it("does not render a detail panel when no place is selected", () => {
+    const { container } = render(<PlacePanel place={null} onClose={() => undefined} />);
 
-    expect(screen.queryByText("Выберите место на карте")).not.toBeInTheDocument();
+    expect(container).toBeEmptyDOMElement();
     expect(screen.queryByLabelText("Информация о месте")).not.toBeInTheDocument();
   });
 
