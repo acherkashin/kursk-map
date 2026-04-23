@@ -67,12 +67,16 @@ function createPhotoMarkerElement(place: Place, onSelectPlace: (place: Place) =>
   element.setAttribute("aria-label", `Открыть ${place.name}`);
   element.dataset.placeId = String(place.id);
 
+  const frame = document.createElement("span");
+  frame.className = "photo-marker-frame";
+
   const image = document.createElement("img");
   image.src = place.thumbnailUrl;
   image.alt = place.name;
   image.loading = "lazy";
   image.decoding = "async";
-  element.appendChild(image);
+  frame.appendChild(image);
+  element.appendChild(frame);
 
   const label = document.createElement("span");
   label.className = "photo-marker-label";

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { BrandCard } from "./components/BrandCard";
 import { MapView } from "./components/MapView";
 import { PlacePanel } from "./components/PlacePanel";
 import { loadPlaces } from "./data";
@@ -84,15 +85,7 @@ export default function App() {
         </section>
 
         <section className="floating-controls" aria-label="Поиск и фильтры мест">
-          <div className="brand-card">
-            <span className="brand-badge" aria-hidden="true">
-              K
-            </span>
-            <div className="brand-copy">
-              <h1>Короче, Курск</h1>
-              <p>Путеводитель для местных</p>
-            </div>
-          </div>
+          <BrandCard />
 
           <label className="search-card">
             <input

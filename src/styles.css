@@ -265,28 +265,35 @@ button {
 }
 
 .photo-marker {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 86px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transform: translateY(0) scale(1);
+  appearance: none;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease;
+  will-change: transform;
+}
+
+.photo-marker-frame {
   box-sizing: border-box;
   width: 72px;
   height: 72px;
-  padding: 0;
+  overflow: hidden;
   border: 2px solid rgba(255, 255, 255, 0.96);
   border-radius: 12px;
   background: var(--surface);
   box-shadow: var(--shadow-md);
-  cursor: pointer;
-  transform: translateY(0) scale(1);
   transition:
-    transform 140ms ease,
     box-shadow 140ms ease,
     border-color 140ms ease;
-  will-change: transform;
-}
-
-.photo-marker img,
-.photo-marker-label {
-  grid-area: 1 / 1;
 }
 
 .photo-marker img {
@@ -297,30 +304,31 @@ button {
 }
 
 .photo-marker-label {
-  align-self: end;
-  width: 100%;
-  min-width: 0;
-  padding: 18px 6px 5px;
-  border-radius: 0 0 10px 10px;
+  max-width: 100%;
+  padding: 5px 8px;
   overflow: hidden;
-  background: linear-gradient(to top, rgba(13, 18, 32, 0.72), rgba(13, 18, 32, 0));
-  color: #ffffff;
-  font-size: 0.72rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.1;
   text-align: center;
   text-overflow: ellipsis;
-  text-shadow:
-    0 1px 2px rgba(13, 18, 32, 0.9),
-    0 0 8px rgba(13, 18, 32, 0.7);
+  box-shadow: var(--shadow-sm);
   white-space: nowrap;
 }
 
 .photo-marker:hover,
 .photo-marker[data-active="true"] {
-  border-color: var(--accent);
   transform: translateY(-3px) scale(1.04);
+}
+
+.photo-marker:hover .photo-marker-frame,
+.photo-marker[data-active="true"] .photo-marker-frame {
+  border-color: var(--accent);
   box-shadow:
     var(--shadow-md),
     0 0 0 5px rgba(46, 107, 255, 0.16);
@@ -328,9 +336,15 @@ button {
 
 .map-shell.map-is-moving .photo-marker {
   width: 58px;
-  height: 58px;
+  gap: 0;
   transition: none;
   transform: translateY(0) scale(1);
+}
+
+.map-shell.map-is-moving .photo-marker-frame {
+  width: 58px;
+  height: 58px;
+  transition: none;
   box-shadow: var(--shadow-sm);
 }
 
@@ -576,8 +590,16 @@ button {
   }
 
   .photo-marker {
+    width: 78px;
+  }
+
+  .photo-marker-frame {
     width: 64px;
     height: 64px;
+  }
+
+  .photo-marker-label {
+    font-size: 0.64rem;
   }
 
   .place-panel {
