@@ -47,19 +47,21 @@ a {
 .app-shell {
   height: 100vh;
   height: 100dvh;
-  padding: 24px;
+  width: 100vw;
   overflow: hidden;
 }
 
 .experience-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
-  gap: 20px;
-  height: calc(100vh - 48px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .map-stage {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
   min-height: 0;
 }
@@ -83,11 +85,14 @@ a {
 }
 
 .map-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 32px;
+  border: 0;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: none;
   background: transparent;
 }
 
@@ -101,7 +106,7 @@ a {
 }
 
 .map-shell .maplibregl-ctrl-top-left {
-  top: 148px;
+  top: 18px;
   left: 18px;
 }
 
@@ -180,9 +185,14 @@ a {
 }
 
 .place-panel {
+  position: fixed;
+  z-index: 5;
+  top: max(16px, env(safe-area-inset-top));
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: min(420px, calc(100vw - 32px));
   min-height: 0;
   border: 1px solid rgba(255, 255, 255, 0.62);
   border-radius: 32px;
@@ -190,24 +200,7 @@ a {
   backdrop-filter: blur(20px) saturate(1.08);
   box-shadow: var(--shadow);
   overflow: hidden;
-}
-
-.place-panel--empty {
-  align-items: stretch;
-  justify-content: center;
-  padding: 32px;
-}
-
-.panel-empty-state h2 {
-  margin: 14px 0 12px;
-  font-size: 2rem;
-  line-height: 0.98;
-  letter-spacing: -0.05em;
-}
-
-.panel-empty-state p {
-  margin: 0;
-  color: var(--muted);
+  animation: panel-slide-from-right 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .panel-close {
@@ -352,40 +345,39 @@ a {
   box-shadow: 0 18px 32px rgba(161, 95, 29, 0.24);
 }
 
+@keyframes panel-slide-from-right {
+  from {
+    transform: translateX(calc(100% + 24px));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes panel-slide-from-bottom {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 1023px) {
-  .app-shell {
-    padding: 14px;
-  }
-
-  .experience-layout {
-    grid-template-columns: 1fr;
-    height: calc(100vh - 28px);
-    height: calc(100dvh - 28px);
-  }
-
-  .map-frame {
-    min-height: 100%;
-    border-radius: 28px;
-  }
-
   .map-shell .maplibregl-ctrl-top-left {
-    top: auto;
-    bottom: 132px;
+    top: max(16px, env(safe-area-inset-top));
+    bottom: auto;
     left: 14px;
   }
 
   .place-panel {
-    position: fixed;
-    z-index: 5;
-    right: 14px;
-    bottom: 14px;
-    left: 14px;
-    max-height: min(72vh, 680px);
-    border-radius: 28px;
-  }
-
-  .place-panel--empty {
-    display: none;
+    inset: 0;
+    width: 100vw;
+    max-height: none;
+    border-radius: 0;
+    animation-name: panel-slide-from-bottom;
   }
 
   .photo-marker {
