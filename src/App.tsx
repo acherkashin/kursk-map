@@ -50,7 +50,9 @@ export default function App() {
           </div>
         </section>
 
-        <PlacePanel place={activePlace} onClose={() => setActivePlace(null)} />
+        {activePlace ? (
+          <PlacePanel place={activePlace} onClose={() => setActivePlace(null)} />
+        ) : null}
       </main>
     </div>
   );
