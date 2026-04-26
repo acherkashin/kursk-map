@@ -3,6 +3,20 @@ import type { Place, RawFeatureCollection } from "./types";
 
 const BASE_URL = "https://gokursk.ru";
 
+function resolvePublicUrl(path: string) {
+  return new URL(path.replace(/^\//, ""), window.location.origin + import.meta.env.BASE_URL).toString();
+}
+
+function normalizeThumbnailUrl(value: string | undefined, fallbackUrl: string) {
+  const thumbnail = value?.trim();
+
+  if (!thumbnail) {
+    return fallbackUrl;
+  }
+
+  return thumbnail.startsWith("/") ? resolvePublicUrl(thumbnail) : thumbnail;
+}
+
 function stripTags(value: string) {
   return value.replace(/<[^>]*>/g, " ");
 }
@@ -37,7 +51,7 @@ export function normalizePlaces(raw: RawFeatureCollection): Place[] {
     const description = normalizeDescription(content.description);
     const imageUrl = new URL(content.image, BASE_URL).toString();
     const detailsUrl = new URL(content.url, BASE_URL).toString();
-    const thumbnailUrl = content.thumbnail?.trim() ? content.thumbnail.trim() : imageUrl;
+    const thumbnailUrl = normalizeThumbnailUrl(content.thumbnail, imageUrl);
 
     return {
       id: feature.properties.id ?? feature.id,

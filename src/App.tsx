@@ -180,7 +180,7 @@ export default function App() {
     const { error } = await supabase.auth.signInWithOtp({
       email: trimmedEmail,
       options: {
-        emailRedirectTo: window.location.origin,
+        emailRedirectTo: new URL(import.meta.env.BASE_URL, window.location.origin).toString(),
       },
     });
 
