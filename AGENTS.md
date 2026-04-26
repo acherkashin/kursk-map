@@ -19,7 +19,8 @@ Single-app frontend на `Vite + React + TypeScript` для интерактив
 │   ├── map-styles/                # MapLibre style JSON для базовой карты
 │   └── place-thumbnails/          # миниатюры для photo markers и карточек
 ├── e2e/                           # Playwright e2e-сценарии
-├── supabase/                      # SQL setup scripts for external Supabase project state
+├── supabase/                      # SQL setup scripts and Edge Functions for external Supabase project state
+│   └── functions/                 # Supabase Edge Functions used by auth/backend adapters
 ├── .codex/skills/                  # локальные для репозитория Codex skills
 └── scripts/                       # служебные скрипты подготовки данных и ассетов
 ```
@@ -43,6 +44,7 @@ ComponentName/
 - `npm run test` — запуск unit/integration tests через Vitest.
 - `npm run test:e2e` — запуск e2e tests через Playwright.
 - `npm run generate:thumbnails` — пересборка миниатюр из скрипта `scripts/generate-thumbnails.mjs`.
+- `supabase functions deploy yandex-userinfo --no-verify-jwt` — деплой адаптера Yandex userinfo для Supabase Auth.
 
 # Conventions
 - Не добавляй `position: relative` к `.photo-marker`: это ломает позиционирование на карте и раскрытие кластеров.
@@ -52,6 +54,7 @@ ComponentName/
 - Перед добавлением любых тестов отдельно перепроверь, действительно ли изменению нужно тестовое покрытие.
 - Не предполагай unit/integration/e2e покрытие автоматически: сначала уточни, какие именно тесты нужно написать.
 - JSON-стили в `public/map-styles/` поддерживай минималистичными и с русским label fallback через `coalesce(name:ru, name)`.
+- Edge Functions в `supabase/functions/` не должны хранить секреты в коде; для публичных auth callbacks отключай JWT verification только если внешний сервис передаёт не Supabase JWT.
 
 # Engineering Principles
 - Strictly follow SOLID, KISS, and DRY principles.
