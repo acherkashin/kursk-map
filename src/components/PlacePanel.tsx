@@ -3,10 +3,19 @@ import type { Place } from "../types";
 
 type PlacePanelProps = {
   place: Place | null;
+  isFavorite?: boolean;
+  isFavoritePending?: boolean;
+  onToggleFavorite?: (place: Place) => void;
   onClose: () => void;
 };
 
-export function PlacePanel({ place, onClose }: PlacePanelProps) {
+export function PlacePanel({
+  place,
+  isFavorite = false,
+  isFavoritePending = false,
+  onToggleFavorite,
+  onClose,
+}: PlacePanelProps) {
   const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
@@ -22,9 +31,27 @@ export function PlacePanel({ place, onClose }: PlacePanelProps) {
 
   return (
     <aside className="place-panel" aria-label={`Информация о месте ${place.name}`}>
-      <button className="panel-close" type="button" onClick={onClose} aria-label="Закрыть карточку">
-        Закрыть
-      </button>
+      <div className="panel-actions">
+        <button
+          className={`panel-favorite${isFavorite ? " panel-favorite--active" : ""}`}
+          type="button"
+          onClick={() => onToggleFavorite?.(place)}
+          disabled={isFavoritePending}
+          aria-pressed={isFavorite}
+          aria-label={isFavorite ? "Удалить из избранного" : "Добавить в избранное"}
+          title={isFavorite ? "Удалить из избранного" : "Добавить в избранное"}
+        >
+          {isFavorite ? "♥" : "♡"}
+        </button>
+        <button
+          className="panel-close"
+          type="button"
+          onClick={onClose}
+          aria-label="Закрыть карточку"
+        >
+          Закрыть
+        </button>
+      </div>
 
       <div className="panel-scroll">
         <figure className="panel-carousel">

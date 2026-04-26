@@ -117,7 +117,7 @@ button {
   align-items: center;
   gap: 14px;
   width: auto;
-  max-width: 760px;
+  max-width: 980px;
   pointer-events: none;
 }
 
@@ -227,6 +227,7 @@ button {
 }
 
 .panel-close,
+.panel-favorite,
 .panel-carousel-controls button {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
@@ -241,11 +242,18 @@ button {
     transform 120ms ease;
 }
 .panel-close:hover,
+.panel-favorite:hover:not(:disabled),
 .panel-carousel-controls button:hover:not(:disabled) {
   border-color: var(--accent);
   color: var(--accent-ink);
   box-shadow: var(--shadow-sm);
   transform: translateY(-1px);
+}
+
+.panel-favorite--active {
+  border-color: rgba(220, 38, 38, 0.28);
+  background: #fff1f2;
+  color: #dc2626;
 }
 
 .empty-map-card {
@@ -388,10 +396,29 @@ button {
   }
 }
 
+.panel-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 14px 0;
+}
+
+.panel-favorite {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.panel-favorite:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
 .panel-close {
-  align-self: flex-end;
   min-height: 34px;
-  margin: 14px 14px 0 0;
   padding: 0 12px;
   font-size: 0.8rem;
 }
@@ -616,9 +643,10 @@ button {
     animation-name: panel-enter-mobile;
   }
 
-  .panel-close {
+  .panel-actions {
     margin-top: max(14px, env(safe-area-inset-top));
     margin-right: 16px;
+    margin-left: 16px;
   }
 
   .panel-scroll {

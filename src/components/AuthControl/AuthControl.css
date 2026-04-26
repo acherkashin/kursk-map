@@ -1,0 +1,134 @@
+.auth-control {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-sm);
+  pointer-events: auto;
+}
+
+.auth-control--open {
+  min-width: min(360px, calc(100vw - 28px));
+}
+
+.auth-control--signed-in {
+  gap: 8px;
+  max-width: 260px;
+  padding: 4px 6px 4px 10px;
+}
+
+.auth-control-user {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink-2);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.auth-control-form {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
+  padding: 6px;
+}
+
+.auth-control-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.auth-control input {
+  min-width: 0;
+  height: 32px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.8rem;
+}
+
+.auth-control input::placeholder {
+  color: var(--ink-3);
+}
+
+.auth-control-button,
+.auth-control-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-2);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition:
+    border-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+.auth-control-button {
+  min-height: 32px;
+  padding: 0 12px;
+}
+
+.auth-control-close {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  line-height: 1;
+}
+
+.auth-control-button:hover:not(:disabled),
+.auth-control-close:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.auth-control-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.54;
+}
+
+.auth-control-message {
+  grid-column: 1 / -1;
+  margin: -1px 4px 2px;
+  color: var(--ink-3);
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+@media (max-width: 1023px) {
+  .auth-control {
+    min-height: 38px;
+  }
+
+  .auth-control--open {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .auth-control,
+  .auth-control--signed-in {
+    width: 100%;
+    max-width: none;
+  }
+}

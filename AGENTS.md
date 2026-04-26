@@ -19,6 +19,7 @@ Single-app frontend на `Vite + React + TypeScript` для интерактив
 │   ├── map-styles/                # MapLibre style JSON для базовой карты
 │   └── place-thumbnails/          # миниатюры для photo markers и карточек
 ├── e2e/                           # Playwright e2e-сценарии
+├── supabase/                      # SQL setup scripts for external Supabase project state
 └── scripts/                       # служебные скрипты подготовки данных и ассетов
 ```
 
@@ -50,6 +51,11 @@ ComponentName/
 - Перед добавлением любых тестов отдельно перепроверь, действительно ли изменению нужно тестовое покрытие.
 - Не предполагай unit/integration/e2e покрытие автоматически: сначала уточни, какие именно тесты нужно написать.
 - JSON-стили в `public/map-styles/` поддерживай минималистичными и с русским label fallback через `coalesce(name:ru, name)`.
+
+# Engineering Principles
+- Follow KISS and the single responsibility principle.
+- React components should stay focused on rendering and UI composition, not contain lots of business logic.
+- Move non-trivial business logic into hooks, helper files, classes, or focused abstractions when it makes the code simpler and responsibilities clearer.
 
 # Boundaries
 ## MUST
