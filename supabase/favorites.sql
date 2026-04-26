@@ -7,6 +7,10 @@ create table if not exists public.favorite_places (
 
 alter table public.favorite_places enable row level security;
 
+drop policy if exists "Users can read their own favorites" on public.favorite_places;
+drop policy if exists "Users can add their own favorites" on public.favorite_places;
+drop policy if exists "Users can remove their own favorites" on public.favorite_places;
+
 create policy "Users can read their own favorites"
 on public.favorite_places for select
 to authenticated

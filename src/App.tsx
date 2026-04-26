@@ -138,6 +138,7 @@ export default function App() {
     }
 
     let isCancelled = false;
+    setFavoritePlaceIds(new Set());
 
     void supabase
       .from("favorite_places")
@@ -149,6 +150,7 @@ export default function App() {
         }
 
         if (error) {
+          setFavoritePlaceIds(new Set());
           setAuthMessage("Не удалось загрузить избранное.");
           return;
         }
