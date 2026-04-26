@@ -1,4 +1,4 @@
-import type { Session, User } from "@supabase/supabase-js";
+import type { Provider, Session, User } from "@supabase/supabase-js";
 import type { AppUser } from "../types";
 import { getSupabaseClient } from "./supabaseClient";
 
@@ -62,6 +62,30 @@ export async function sendMagicLink(email: string, redirectTo: string): Promise<
     email,
     options: {
       emailRedirectTo: redirectTo,
+    },
+  });
+
+  if (error) {
+    throw error;
+  }
+}
+
+export async function signInWithOAuthProvider(
+  provider: Provider,
+  redirectTo: string,
+  scopes: string,
+): Promise<void> {
+  const supabase = getSupabaseClient();
+
+  if (!supabase) {
+    throw new Error("Supabase is not configured.");
+  }
+
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider,
+    options: {
+      redirectTo,
+      scopes,
     },
   });
 

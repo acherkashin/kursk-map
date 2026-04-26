@@ -1,1 +1,0 @@
-export { AuthControl } from "./AuthControl";
