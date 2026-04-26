@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { AuthControl } from "./components/AuthControl";
 import { BrandCard } from "./components/BrandCard";
 import { MapView } from "./components/MapView";
 import { PlacePanel } from "./components/PlacePanel";
@@ -24,12 +23,14 @@ export default function App() {
     user,
     favoritePlaceIds,
     pendingFavoritePlaceIds,
-    isAuthControlOpen,
+    isAuthDialogOpen,
     isSendingMagicLink,
+    pendingAuthProviderId,
     authMessage,
     isSupabaseConfigured,
-    setIsAuthControlOpen,
+    setIsAuthDialogOpen,
     sendSignInMagicLink,
+    signInWithProvider,
     signOutUser,
     toggleFavorite,
   } = useFavoritesAuth();
@@ -104,7 +105,18 @@ export default function App() {
         </section>
 
         <section className="floating-controls" aria-label="Поиск и фильтры мест">
-          <BrandCard />
+          <BrandCard
+            user={user}
+            isAuthDialogOpen={isAuthDialogOpen}
+            isSupabaseConfigured={isSupabaseConfigured}
+            isSendingMagicLink={isSendingMagicLink}
+            pendingAuthProviderId={pendingAuthProviderId}
+            authMessage={authMessage}
+            onAuthDialogOpenChange={setIsAuthDialogOpen}
+            onSendMagicLink={sendSignInMagicLink}
+            onSignInWithProvider={signInWithProvider}
+            onSignOut={signOutUser}
+          />
 
           <label className="search-card">
             <input
@@ -115,17 +127,6 @@ export default function App() {
               aria-label="Поиск мест"
             />
           </label>
-
-          <AuthControl
-            user={user}
-            isConfigured={isSupabaseConfigured}
-            isOpen={isAuthControlOpen}
-            isSendingMagicLink={isSendingMagicLink}
-            message={authMessage}
-            onOpenChange={setIsAuthControlOpen}
-            onSendMagicLink={sendSignInMagicLink}
-            onSignOut={signOutUser}
-          />
         </section>
 
         {filteredPlaces.length === 0 ? (

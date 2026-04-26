@@ -1,0 +1,151 @@
+.brand-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 52px;
+  min-width: 0;
+  padding: 7px 14px;
+  flex: 0 1 430px;
+}
+
+.brand-badge {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #4f7cff 0%, #2e6bff 100%);
+  color: #ffffff;
+  flex: 0 0 auto;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.brand-copy {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.brand-copy h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.brand-copy p {
+  margin: 1px 0 0;
+  color: var(--ink-3);
+  font-size: 0.64rem;
+  line-height: 1.05;
+}
+
+.brand-auth {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  margin-left: auto;
+}
+
+.brand-account {
+  min-width: 0;
+  max-width: 140px;
+  overflow: hidden;
+  color: var(--ink-2);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand-auth-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-2);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition:
+    border-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+.brand-auth-button:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1023px) {
+  .brand-card {
+    flex: 0 1 auto;
+    height: 52px;
+    padding: 7px 12px;
+    gap: 10px;
+  }
+
+  .brand-badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 1.35rem;
+  }
+
+  .brand-copy h1 {
+    font-size: 0.82rem;
+  }
+
+  .brand-copy p {
+    font-size: 0.63rem;
+  }
+
+  .brand-account {
+    max-width: 110px;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-card {
+    flex: 0 0 auto;
+    height: 52px;
+    padding: 7px 11px;
+  }
+
+  .brand-badge {
+    width: 34px;
+    height: 34px;
+    font-size: 1.3rem;
+  }
+
+  .brand-copy h1 {
+    font-size: 0.8rem;
+  }
+
+  .brand-copy p {
+    font-size: 0.61rem;
+  }
+
+  .brand-auth-button {
+    min-height: 31px;
+    padding: 0 11px;
+    font-size: 0.76rem;
+  }
+
+  .brand-account {
+    max-width: min(160px, 38vw);
+  }
+}

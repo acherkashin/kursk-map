@@ -5,28 +5,64 @@ import {
   loadFavoritePlaceIds,
   removeFavoritePlace,
   sendMagicLink,
+  signInWithOAuthProvider,
   signOut,
   subscribeToAuthChanges,
 } from "../services/favoritesAuthService";
 import { isSupabaseConfigured } from "../services/supabaseClient";
+import type { Provider } from "@supabase/supabase-js";
 import type { AppUser, Place } from "../types";
 
 type UseFavoritesAuthResult = {
   user: AppUser | null;
   favoritePlaceIds: Set<number>;
   pendingFavoritePlaceIds: Set<number>;
-  isAuthControlOpen: boolean;
+  isAuthDialogOpen: boolean;
   isSendingMagicLink: boolean;
+  pendingAuthProviderId: string | null;
   authMessage: string | null;
   isSupabaseConfigured: boolean;
-  setIsAuthControlOpen: (isOpen: boolean) => void;
+  setIsAuthDialogOpen: (isOpen: boolean) => void;
   sendSignInMagicLink: (email: string) => Promise<void>;
+  signInWithProvider: (providerId: string, provider: Provider, scopes: string) => Promise<void>;
   signOutUser: () => Promise<void>;
   toggleFavorite: (place: Place) => Promise<void>;
 };
 
-function getMagicLinkRedirectUrl(): string {
+function getAuthRedirectUrl(): string {
   return new URL(import.meta.env.BASE_URL, window.location.origin).toString();
+}
+
+function getAuthErrorMessage(): string | null {
+  const searchParams = new URLSearchParams(window.location.search);
+  const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+  const errorDescription =
+    searchParams.get("error_description") ?? hashParams.get("error_description");
+
+  if (!errorDescription) {
+    return null;
+  }
+
+  if (errorDescription.includes("Error getting user email from external provider")) {
+    return "Яндекс вернул профиль без email в формате, который ожидает Supabase. Включите Allow users without email у провайдера Yandex в Supabase.";
+  }
+
+  return "Не удалось завершить вход. Попробуйте еще раз.";
+}
+
+function clearAuthErrorFromUrl(): void {
+  const searchParams = new URLSearchParams(window.location.search);
+  const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+  const hasAuthError = searchParams.has("error") || hashParams.has("error");
+
+  if (!hasAuthError) {
+    return;
+  }
+
+  const cleanUrl = new URL(window.location.href);
+  cleanUrl.search = "";
+  cleanUrl.hash = "";
+  window.history.replaceState({}, "", cleanUrl);
 }
 
 export function useFavoritesAuth(): UseFavoritesAuthResult {
@@ -35,9 +71,22 @@ export function useFavoritesAuth(): UseFavoritesAuthResult {
   const [pendingFavoritePlaceIds, setPendingFavoritePlaceIds] = useState<Set<number>>(
     () => new Set(),
   );
-  const [isAuthControlOpen, setIsAuthControlOpen] = useState(false);
+  const [isAuthDialogOpen, setIsAuthDialogOpen] = useState(false);
   const [isSendingMagicLink, setIsSendingMagicLink] = useState(false);
+  const [pendingAuthProviderId, setPendingAuthProviderId] = useState<string | null>(null);
   const [authMessage, setAuthMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const authErrorMessage = getAuthErrorMessage();
+
+    if (!authErrorMessage) {
+      return;
+    }
+
+    setIsAuthDialogOpen(true);
+    setAuthMessage(authErrorMessage);
+    clearAuthErrorFromUrl();
+  }, []);
 
   useEffect(() => {
     if (!isSupabaseConfigured) {
@@ -62,7 +111,7 @@ export function useFavoritesAuth(): UseFavoritesAuthResult {
       setUser(nextUser);
 
       if (nextUser) {
-        setIsAuthControlOpen(false);
+        setIsAuthDialogOpen(false);
         setAuthMessage(null);
       } else {
         setFavoritePlaceIds(new Set());
@@ -119,7 +168,7 @@ export function useFavoritesAuth(): UseFavoritesAuthResult {
     setAuthMessage(null);
 
     try {
-      await sendMagicLink(trimmedEmail, getMagicLinkRedirectUrl());
+      await sendMagicLink(trimmedEmail, getAuthRedirectUrl());
       setAuthMessage("Проверьте почту: ссылка для входа уже там.");
     } catch {
       setAuthMessage("Не удалось отправить ссылку. Проверьте email.");
@@ -127,6 +176,27 @@ export function useFavoritesAuth(): UseFavoritesAuthResult {
       setIsSendingMagicLink(false);
     }
   }, []);
+
+  const signInWithProvider = useCallback(
+    async (providerId: string, provider: Provider, scopes: string) => {
+      if (!isSupabaseConfigured) {
+        setAuthMessage("Вход пока не настроен.");
+        return;
+      }
+
+      setPendingAuthProviderId(providerId);
+      setAuthMessage(null);
+
+      try {
+        await signInWithOAuthProvider(provider, getAuthRedirectUrl(), scopes);
+      } catch {
+        setAuthMessage("Не удалось открыть вход. Попробуйте позже.");
+      } finally {
+        setPendingAuthProviderId(null);
+      }
+    },
+    [],
+  );
 
   const signOutUser = useCallback(async () => {
     try {
@@ -139,13 +209,13 @@ export function useFavoritesAuth(): UseFavoritesAuthResult {
   const toggleFavorite = useCallback(
     async (place: Place) => {
       if (!isSupabaseConfigured) {
-        setIsAuthControlOpen(true);
+        setIsAuthDialogOpen(true);
         setAuthMessage("Вход пока не настроен.");
         return;
       }
 
       if (!user) {
-        setIsAuthControlOpen(true);
+        setIsAuthDialogOpen(true);
         setAuthMessage("Войдите, чтобы сохранять места.");
         return;
       }
@@ -201,12 +271,14 @@ export function useFavoritesAuth(): UseFavoritesAuthResult {
     user,
     favoritePlaceIds,
     pendingFavoritePlaceIds,
-    isAuthControlOpen,
+    isAuthDialogOpen,
     isSendingMagicLink,
+    pendingAuthProviderId,
     authMessage,
     isSupabaseConfigured,
-    setIsAuthControlOpen,
+    setIsAuthDialogOpen,
     sendSignInMagicLink,
+    signInWithProvider,
     signOutUser,
     toggleFavorite,
   };
