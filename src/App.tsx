@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
+import { AuthControl } from "./components/AuthControl";
 import { BrandCard } from "./components/BrandCard";
 import { MapView } from "./components/MapView";
 import { PlacePanel } from "./components/PlacePanel";
 import { loadPlaces } from "./data";
+import { useFavoritesAuth } from "./hooks/useFavoritesAuth";
 import { filterPlaces } from "./placeFilters";
 import type { Place } from "./types";
 
@@ -18,7 +20,24 @@ export default function App() {
   const [activePlace, setActivePlace] = useState<Place | null>(null);
   const [searchInputValue, setSearchInputValue] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const {
+    user,
+    favoritePlaceIds,
+    pendingFavoritePlaceIds,
+    isAuthControlOpen,
+    isSendingMagicLink,
+    authMessage,
+    isSupabaseConfigured,
+    setIsAuthControlOpen,
+    sendSignInMagicLink,
+    signOutUser,
+    toggleFavorite,
+  } = useFavoritesAuth();
   const filteredPlaces = useMemo(() => filterPlaces(places, searchQuery), [searchQuery]);
+  const activePlaceIsFavorite = activePlace ? favoritePlaceIds.has(activePlace.id) : false;
+  const isActivePlaceFavoritePending = activePlace
+    ? pendingFavoritePlaceIds.has(activePlace.id)
+    : false;
 
   useEffect(() => {
     if (searchInputValue === searchQuery) {
@@ -96,6 +115,17 @@ export default function App() {
               aria-label="Поиск мест"
             />
           </label>
+
+          <AuthControl
+            user={user}
+            isConfigured={isSupabaseConfigured}
+            isOpen={isAuthControlOpen}
+            isSendingMagicLink={isSendingMagicLink}
+            message={authMessage}
+            onOpenChange={setIsAuthControlOpen}
+            onSendMagicLink={sendSignInMagicLink}
+            onSignOut={signOutUser}
+          />
         </section>
 
         {filteredPlaces.length === 0 ? (
@@ -105,7 +135,13 @@ export default function App() {
           </section>
         ) : null}
 
-        <PlacePanel place={activePlace} onClose={() => setActivePlace(null)} />
+        <PlacePanel
+          place={activePlace}
+          isFavorite={activePlaceIsFavorite}
+          isFavoritePending={isActivePlaceFavoritePending}
+          onToggleFavorite={toggleFavorite}
+          onClose={() => setActivePlace(null)}
+        />
       </main>
     </div>
   );

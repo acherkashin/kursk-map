@@ -3,10 +3,16 @@ dist/
 coverage/
 test-results/
 
+.env
+.env.*
+!.env.example
+
 *.tsbuildinfo
 
 .DS_Store
-.codex/
+.codex/*
+!.codex/skills/
+!.codex/skills/**
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

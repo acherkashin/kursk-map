@@ -24,6 +24,10 @@ const DEFAULT_MAP_STYLE_ID: MapStyleId = "custom";
 const FALLBACK_MAP_STYLE_ID: MapStyleId = "positron";
 const DEFAULT_PROJECTION = { type: "mercator" } as const;
 
+function resolvePublicUrl(path: string) {
+  return new URL(path.replace(/^\//, ""), window.location.origin + import.meta.env.BASE_URL).toString();
+}
+
 function isMapStyleId(value: string | undefined): value is MapStyleId {
   return typeof value === "string" && value in MAP_STYLE_OPTIONS;
 }
@@ -62,7 +66,8 @@ export async function resolveMapStyle(styleId = getBaseMapStyle().id): Promise<S
   }
 
   try {
-    const response = await fetch(mapStyle.style);
+    const styleUrl = mapStyle.style.startsWith("/") ? resolvePublicUrl(mapStyle.style) : mapStyle.style;
+    const response = await fetch(styleUrl);
 
     if (!response.ok) {
       throw new Error(`Unable to load style "${styleId}" (${response.status})`);
