@@ -1,9 +1,9 @@
 import { useId, useState, type FormEvent } from "react";
-import type { User } from "@supabase/supabase-js";
+import type { AppUser } from "../../types";
 import "./AuthControl.css";
 
 type AuthControlProps = {
-  user: User | null;
+  user: AppUser | null;
   isConfigured: boolean;
   isOpen: boolean;
   isSendingMagicLink: boolean;

@@ -45,3 +45,8 @@ export type Place = {
   categoryType: string;
   ctaLabel: string;
 };
+
+export type AppUser = {
+  id: string;
+  email: string | null;
+};
