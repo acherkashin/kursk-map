@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Review code changes for real risks"
+  default_prompt: "Use $code-review to review the current repository changes before merge."

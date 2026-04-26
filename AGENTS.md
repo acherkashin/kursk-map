@@ -20,6 +20,7 @@ Single-app frontend на `Vite + React + TypeScript` для интерактив
 │   └── place-thumbnails/          # миниатюры для photo markers и карточек
 ├── e2e/                           # Playwright e2e-сценарии
 ├── supabase/                      # SQL setup scripts for external Supabase project state
+├── .codex/skills/                  # локальные для репозитория Codex skills
 └── scripts/                       # служебные скрипты подготовки данных и ассетов
 ```
 
@@ -53,9 +54,15 @@ ComponentName/
 - JSON-стили в `public/map-styles/` поддерживай минималистичными и с русским label fallback через `coalesce(name:ru, name)`.
 
 # Engineering Principles
-- Follow KISS and the single responsibility principle.
-- React components should stay focused on rendering and UI composition, not contain lots of business logic.
-- Move non-trivial business logic into hooks, helper files, classes, or focused abstractions when it makes the code simpler and responsibilities clearer.
+- Strictly follow SOLID, KISS, and DRY principles.
+- Prefer readability and maintainability over clever solutions.
+- Avoid premature optimization, but do not write obviously inefficient code.
+- Keep functions and React components small, focused, and single-purpose.
+- Do not mix business logic with UI logic; React components should focus on rendering and UI composition.
+- Move non-trivial business logic into hooks, helper files, classes, or focused abstractions when it makes responsibilities clearer.
+- Do not introduce new abstractions unless they provide clear value for the current code.
+- Handle edge cases explicitly.
+- Respect existing project conventions and patterns.
 
 # Boundaries
 ## MUST
