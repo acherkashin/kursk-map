@@ -47,7 +47,6 @@ ComponentName/
 - `supabase functions deploy yandex-userinfo --no-verify-jwt` — деплой адаптера Yandex userinfo для Supabase Auth.
 
 # Conventions
-- Не добавляй `position: relative` к `.photo-marker`: это ломает позиционирование на карте и раскрытие кластеров.
 - Не переноси нормализацию сырых данных в UI-компоненты; преобразование данных должно оставаться в `src/data.ts`.
 - E2E test hooks открывай только через `?e2e=1`; не делай их доступными в обычном runtime.
 - E2E tests пиши только для критических пользовательских путей; не покрывай ими каждую мелкую деталь интерфейса по умолчанию.
@@ -80,5 +79,4 @@ ComponentName/
 - Спрашивай перед изменением набора видимых label layers в стиле карты.
 
 ## MUST NOT
-- Не добавляй `position: relative` к `.photo-marker`.
 - Не возвращай скрытые label layers и не делай карту визуально шумнее без согласования.
