@@ -67,6 +67,9 @@ function createPhotoMarkerElement(place: Place, onSelectPlace: (place: Place) =>
   element.setAttribute("aria-label", `Открыть ${place.name}`);
   element.dataset.placeId = String(place.id);
 
+  const content = document.createElement("span");
+  content.className = "photo-marker-content";
+
   const frame = document.createElement("span");
   frame.className = "photo-marker-frame";
 
@@ -76,12 +79,18 @@ function createPhotoMarkerElement(place: Place, onSelectPlace: (place: Place) =>
   image.loading = "lazy";
   image.decoding = "async";
   frame.appendChild(image);
-  element.appendChild(frame);
+  content.appendChild(frame);
 
   const label = document.createElement("span");
   label.className = "photo-marker-label";
-  label.textContent = place.name;
-  element.appendChild(label);
+
+  const labelText = document.createElement("span");
+  labelText.className = "photo-marker-label-text";
+  labelText.textContent = place.name;
+  label.appendChild(labelText);
+
+  content.appendChild(label);
+  element.appendChild(content);
 
   element.addEventListener("click", () => onSelectPlace(place));
 
@@ -144,7 +153,7 @@ function syncPhotoMarkers({
       const element = createPhotoMarkerElement(place, onSelectPlace);
       const marker = new maplibregl.Marker({
         element,
-        anchor: "bottom",
+        anchor: "center",
       })
         .setLngLat([place.lon, place.lat])
         .addTo(map);
