@@ -2,6 +2,8 @@
 
 Supabase custom OAuth providers expect a standards-shaped userinfo response with a `sub` field. Yandex ID returns `id`, `default_email`, and `emails`, and expects the access token as `Authorization: OAuth <token>`. This Edge Function adapts Yandex's response for Supabase Auth.
 
+See [AUTH_FLOW.md](./AUTH_FLOW.md) for the full login sequence diagram and field mapping.
+
 ## Deploy
 
 ```sh
