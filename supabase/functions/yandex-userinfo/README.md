@@ -4,6 +4,8 @@ Supabase custom OAuth providers expect a standards-shaped userinfo response with
 
 See [AUTH_FLOW.md](./AUTH_FLOW.md) for the full login sequence diagram and field mapping.
 
+See [YANDEX_AUTH_SETUP_RU.md](./YANDEX_AUTH_SETUP_RU.md) for a complete setup guide.
+
 ## Deploy
 
 ```sh
