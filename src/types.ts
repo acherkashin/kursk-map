@@ -17,7 +17,6 @@ export type RawFeature = {
     coordinates: [number, number];
   };
   properties: {
-    section: string;
     type: string;
     id: number;
     balloonContent: RawBalloonContent;
@@ -41,7 +40,6 @@ export type Place = {
   imageUrl: string;
   thumbnailUrl: string;
   detailsUrl: string;
-  section: string;
   categoryType: string;
   ctaLabel: string;
 };

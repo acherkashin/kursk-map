@@ -1,0 +1,330 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 320,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.231969,
+          35.392868
+        ]
+      },
+      "properties": {
+        "type": "1009",
+        "id": 320,
+        "balloonContent": {
+          "url": "/objects/park-otel-peschanyy/",
+          "image": "/upload/resize_cache/iblock/4ec/7gkk2vstcehdcj4ycv2zbsk05bvnrusx/640_380_0/b_38.jpg",
+          "name": "Парк-отель «Песчаный»",
+          "description": "«Песчаный» расположен у кромки водохранилища и окружен сосновым лесом. В озере можно купаться, плавать на лодке и рыбачить. ",
+          "address": "Железногорский район・с. Михайловка・п. Ленинский",
+          "coordinates": "52.231969, 35.392868",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/320-f29160ce22.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2001,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.786985,
+          36.173535
+        ]
+      },
+      "properties": {
+        "type": "спорт и отдых",
+        "id": 2001,
+        "balloonContent": {
+          "url": "https://2gis.ru/kursk/geo/10274532434640991",
+          "image": "/place-thumbnails/placeholder.svg",
+          "name": "Картинг",
+          "description": "Картинг-площадка в Курске для активного отдыха и тренировочных заездов.",
+          "address": "Курск",
+          "coordinates": "51.786985, 36.173535",
+          "button": "Открыть подробности",
+          "thumbnail": "/place-thumbnails/placeholder.svg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2002,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.695438,
+          36.156211
+        ]
+      },
+      "properties": {
+        "type": "спорт и отдых",
+        "id": 2002,
+        "balloonContent": {
+          "url": "https://vk.com/sskvystrel",
+          "image": "/place-thumbnails/placeholder.svg",
+          "name": "ССК «Выстрел»",
+          "description": "Спортивно-стрелковый клуб с тиром в черте города и площадками для практической и стендовой стрельбы.",
+          "address": "Курск, ул. Энгельса, 169",
+          "coordinates": "51.695438, 36.156211",
+          "button": "Открыть сообщество",
+          "thumbnail": "/place-thumbnails/placeholder.svg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2003,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.960323,
+          35.649199
+        ]
+      },
+      "properties": {
+        "type": "агротуризм",
+        "id": 2003,
+        "balloonContent": {
+          "url": "https://gokursk.ru/objects/ulitochnaya-ferma-ulitkampaniya/",
+          "image": "/place-thumbnails/placeholder.svg",
+          "name": "Улиточная ферма «Улиткампания»",
+          "description": "Ферма в Фатежском районе, где проводят экскурсии, рассказывают о разведении улиток и предлагают дегустации.",
+          "address": "Фатежский район, Солдатский сельсовет, деревня Поздняково",
+          "coordinates": "51.960323, 35.649199",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/placeholder.svg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1410,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.973685,
+          36.487192
+        ]
+      },
+      "properties": {
+        "type": "304",
+        "id": 1410,
+        "balloonContent": {
+          "url": "/objects/lavandovyy-bereg/",
+          "image": "/upload/resize_cache/iblock/383/y87jlp0m53au8okcm0bonolna1kl18cx/640_380_0/ocuwjb5HqvQ_1_.jpg",
+          "name": "Лавандовый берег",
+          "description": "Цветочная ферма",
+          "address": "Курская область, 1-я Воробьёвка",
+          "coordinates": "51.973685, 36.487192",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1410-f562c0f437.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1244,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.371854,
+          37.127979
+        ]
+      },
+      "properties": {
+        "type": "3170",
+        "id": 1244,
+        "balloonContent": {
+          "url": "/objects/derevnya-syrovarov/",
+          "image": "/upload/resize_cache/iblock/d0c/hjq9n0uhb0hztn5f8nfg1kqcemnwem1x/640_380_0/oBxnWxmRK6A_1_.jpg",
+          "name": "Деревня сыроваров",
+          "description": "Проект «Ферма групп» и курского фермера Александра Волкова",
+          "address": "Мантуровский район, деревня Трубацкое, улица Урожайная 56",
+          "coordinates": "51.371854,37.127979",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1244-2acb33fc5c.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2004,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.744344,
+          36.186764
+        ]
+      },
+      "properties": {
+        "type": "еда",
+        "id": 2004,
+        "balloonContent": {
+          "url": "https://dikiy-kaban-kursk.clients.site/",
+          "image": "/place-thumbnails/placeholder.svg",
+          "name": "Дикий Кабан",
+          "description": "Ресторан в центре Курска с мясной кухней и атмосферой городского гастробара.",
+          "address": "Курск, ул. Димитрова, 66",
+          "coordinates": "51.744344, 36.186764",
+          "button": "Открыть сайт",
+          "thumbnail": "/place-thumbnails/placeholder.svg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2005,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.74466,
+          36.190846
+        ]
+      },
+      "properties": {
+        "type": "еда",
+        "id": 2005,
+        "balloonContent": {
+          "url": "https://2gis.ru/kursk/firm/70000001040027900",
+          "image": "/place-thumbnails/placeholder.svg",
+          "name": "Iguana Lounge",
+          "description": "Лаундж-бар на Радищева с вечерним графиком работы, напитками и настольными играми.",
+          "address": "Курск, улица Радищева, 79А",
+          "coordinates": "51.744660, 36.190846",
+          "button": "Открыть подробности",
+          "thumbnail": "/place-thumbnails/placeholder.svg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 91,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.989105,
+          36.477422
+        ]
+      },
+      "properties": {
+        "type": "204",
+        "id": 91,
+        "balloonContent": {
+          "url": "/objects/usadba-a-a-feta/",
+          "image": "/upload/resize_cache/iblock/0a8/3rj6ywjjhegklcap2eswl98dtsn9k38x/640_380_0/photo_2021_08_22_16_23_07.jpg",
+          "name": "Усадьба Афанасия Фета",
+          "description": "Усадебный дом поэта и публициста Афанасия Фета, где он провёл заключительный период жизни. Здесь можно больше узнать о творчестве и помещичьем быте.",
+          "address": "Золотухинский район・дер.1-я Воробьевка, 81а",
+          "coordinates": "51.989105, 36.477422",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/91-2afd583ae0.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1430,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.687089,
+          36.381339
+        ]
+      },
+      "properties": {
+        "type": "3170",
+        "id": 1430,
+        "balloonContent": {
+          "url": "/objects/bakhcha-kurskarbuz/",
+          "image": "/upload/resize_cache/iblock/3db/e3i48xrrou1mshjvxv62b7fnqm1p7key/640_380_0/y4BjheaozVw_1_.jpg",
+          "name": "Бахча «КурскАрбуз»",
+          "description": "Курская бахча, где выращивают экзотические сорта арбузов",
+          "address": "Курский район, д. Малая Шумаковка",
+          "coordinates": "51.687089, 36.381339",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1430-b2341d1604.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2006,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.709411,
+          36.203488
+        ]
+      },
+      "properties": {
+        "type": "конный клуб",
+        "id": 2006,
+        "balloonContent": {
+          "url": "https://vk.com/club154342705",
+          "image": "/place-thumbnails/placeholder.svg",
+          "name": "Раздолье Русское",
+          "description": "Конный клуб в черте города: прогулки верхом, занятия, фотосессии и отдых на природе.",
+          "address": "Курск, Полевая ул., 50, корп. 10",
+          "coordinates": "51.709411, 36.203488",
+          "button": "Открыть сообщество",
+          "thumbnail": "/place-thumbnails/placeholder.svg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2007,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.6049,
+          36.6512
+        ]
+      },
+      "properties": {
+        "type": "велнес",
+        "id": 2007,
+        "balloonContent": {
+          "url": "https://rivierawell.ru/banya",
+          "image": "/place-thumbnails/placeholder.svg",
+          "name": "Банный комплекс Riviera Wellness Resort",
+          "description": "Банный комплекс на территории Riviera Wellness Resort с парениями, купелью и отдыхом у Лазурного озера.",
+          "address": "Белгородская область, п. Разумное, ул. Прелестная, 1",
+          "coordinates": "50.604900, 36.651200",
+          "button": "Открыть сайт",
+          "thumbnail": "/place-thumbnails/placeholder.svg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1619,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.720962,
+          36.161583
+        ]
+      },
+      "properties": {
+        "type": "163",
+        "id": 1619,
+        "balloonContent": {
+          "url": "/objects/kukhmisterskaya-atilan/",
+          "image": "/upload/resize_cache/iblock/ac2/f7bhrj76wk3mzvas3965ktnds615uwyz/640_380_0/IMG_9023.JPG",
+          "name": "Кухмистерская Atilan",
+          "description": "Кафе в стиле СССР",
+          "address": "Курск, ул. Асеева 1к1",
+          "coordinates": "51.720962, 36.161583",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1619-2a4268de2a.webp"
+        }
+      }
+    }
+  ]
+}

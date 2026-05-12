@@ -1,7 +1,9 @@
-import rawCollection from "./all-objects.json";
+import allObjectsCollection from "./all-objects.json";
+import featuredObjectsCollection from "./featured-objects.json";
 import type { Place, RawFeatureCollection } from "./types";
 
 const BASE_URL = "https://gokursk.ru";
+const LOCAL_IMAGE_PREFIXES = ["/place-thumbnails/"];
 
 function resolvePublicUrl(path: string) {
   return new URL(path.replace(/^\//, ""), window.location.origin + import.meta.env.BASE_URL).toString();
@@ -15,6 +17,17 @@ function normalizeThumbnailUrl(value: string | undefined, fallbackUrl: string) {
   }
 
   return thumbnail.startsWith("/") ? resolvePublicUrl(thumbnail) : thumbnail;
+}
+
+function normalizeImageUrl(value: string) {
+  const image = value.trim();
+  const isLocalImage = LOCAL_IMAGE_PREFIXES.some((prefix) => image.startsWith(prefix));
+
+  if (isLocalImage) {
+    return resolvePublicUrl(image);
+  }
+
+  return new URL(image, BASE_URL).toString();
 }
 
 function stripTags(value: string) {
@@ -49,7 +62,7 @@ export function normalizePlaces(raw: RawFeatureCollection): Place[] {
     const content = feature.properties.balloonContent;
     const [lat, lon] = feature.geometry.coordinates;
     const description = normalizeDescription(content.description);
-    const imageUrl = new URL(content.image, BASE_URL).toString();
+    const imageUrl = normalizeImageUrl(content.image);
     const detailsUrl = new URL(content.url, BASE_URL).toString();
     const thumbnailUrl = normalizeThumbnailUrl(content.thumbnail, imageUrl);
 
@@ -65,13 +78,21 @@ export function normalizePlaces(raw: RawFeatureCollection): Place[] {
       imageUrl,
       thumbnailUrl,
       detailsUrl,
-      section: feature.properties.section,
       categoryType: feature.properties.type,
       ctaLabel: content.button.trim() || "Узнать подробнее",
     };
   });
 }
 
+function getSelectedRawCollection() {
+  const dataset =
+    typeof window === "undefined"
+      ? null
+      : new URLSearchParams(window.location.search).get("dataset");
+
+  return dataset === "all" ? allObjectsCollection : featuredObjectsCollection;
+}
+
 export function loadPlaces() {
-  return normalizePlaces(rawCollection as RawFeatureCollection);
+  return normalizePlaces(getSelectedRawCollection() as RawFeatureCollection);
 }

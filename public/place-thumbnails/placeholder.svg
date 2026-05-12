@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="380" viewBox="0 0 640 380" role="img" aria-labelledby="title desc">
+  <title id="title">Изображение места</title>
+  <desc id="desc">Нейтральная заглушка для карточек мест без фотографии.</desc>
+  <rect width="640" height="380" fill="#eef3ee"/>
+  <path d="M0 270c70-34 128-40 188-16 64 26 124 26 193-12 76-42 162-38 259 14v124H0z" fill="#d9e5d7"/>
+  <path d="M0 304c74-22 139-20 196 7 72 35 142 36 220 4 77-32 151-28 224 12v53H0z" fill="#c7d7c3"/>
+  <circle cx="505" cy="93" r="46" fill="#f2c879"/>
+  <path d="M196 122h248a18 18 0 0 1 18 18v142a18 18 0 0 1-18 18H196a18 18 0 0 1-18-18V140a18 18 0 0 1 18-18zm14 30v118h220V152H210z" fill="#ffffff" opacity=".82"/>
+  <circle cx="258" cy="192" r="24" fill="#8ea58d"/>
+  <path d="M300 248l47-55 34 38 22-25 27 42z" fill="#8ea58d"/>
+</svg>
