@@ -350,6 +350,31 @@
           "thumbnail": "/place-thumbnails/placeholder.svg"
         }
       }
+    },
+    {
+      "type": "Feature",
+      "id": 1172,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.73686,
+          36.190633
+        ]
+      },
+      "properties": {
+        "type": "театр",
+        "id": 1172,
+        "balloonContent": {
+          "url": "https://theatre3dkursk.ru",
+          "image": "/place-thumbnails/1172-theatre-3d.webp",
+          "name": "Молодёжный театр «3Д»",
+          "description": "Театр Дома Знаний с камерными постановками и современной сценической программой.",
+          "address": "Курск, ул. Радищева, 35, этаж 1",
+          "coordinates": "51.736860, 36.190633",
+          "button": "Открыть сайт",
+          "thumbnail": "/place-thumbnails/1172-theatre-3d.webp"
+        }
+      }
     }
   ]
 }
