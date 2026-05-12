@@ -325,6 +325,31 @@
           "thumbnail": "/place-thumbnails/1619-2a4268de2a.webp"
         }
       }
+    },
+    {
+      "type": "Feature",
+      "id": 2008,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.750595,
+          36.191409
+        ]
+      },
+      "properties": {
+        "type": "активный отдых",
+        "id": 2008,
+        "balloonContent": {
+          "url": "https://kursk.warpoint.ru",
+          "image": "/place-thumbnails/placeholder.svg",
+          "name": "War Point",
+          "description": "VR-арена для командных игр рядом с ТЦ «Европа» и Московской площадью.",
+          "address": "Курск, ул. Карла Маркса, 10, этаж 4",
+          "coordinates": "51.750595, 36.191409",
+          "button": "Открыть сайт",
+          "thumbnail": "/place-thumbnails/placeholder.svg"
+        }
+      }
     }
   ]
 }
