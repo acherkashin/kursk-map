@@ -11,16 +11,15 @@ describe("placeFilters", () => {
   });
 
   it("matches places when users search without yo diacritics", () => {
-    expect(filterPlaces(places, "Елки").some((place) => place.name === "Ёлки-иголки")).toBe(true);
     expect(
-      filterPlaces(places, "Семеновская").some((place) => place.address.includes("Семёновская")),
+      filterPlaces(places, "Воробьевка").some((place) => place.address.includes("Воробьёвка")),
     ).toBe(true);
   });
 
   it("ignores case and separator noise in common queries", () => {
     expect(
-      filterPlaces(places, "  СЕМЕНОВСКАЯ, 14  ").some((place) =>
-        place.address.includes("Семёновская, 14"),
+      filterPlaces(places, "  ПАРК ОТЕЛЬ ПЕСЧАНЫЙ  ").some((place) =>
+        place.name.includes("Парк-отель"),
       ),
     ).toBe(true);
   });

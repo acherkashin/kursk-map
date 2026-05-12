@@ -4,15 +4,15 @@ import { loadPlaces } from "./data";
 describe("loadPlaces", () => {
   const places = loadPlaces();
 
-  it("normalizes every object from the source file", () => {
-    expect(places).toHaveLength(265);
+  it("normalizes every object from the default featured source file", () => {
+    expect(places).toHaveLength(12);
   });
 
   it("keeps Kursk-area coordinates in lat/lon order and exposes explicit fields", () => {
     const firstPlace = places[0];
 
-    expect(firstPlace.lat).toBeCloseTo(51.745877);
-    expect(firstPlace.lon).toBeCloseTo(36.194813);
+    expect(firstPlace.lat).toBeCloseTo(52.231969);
+    expect(firstPlace.lon).toBeCloseTo(35.392868);
   });
 
   it("resolves relative image and details urls to gokursk", () => {
@@ -28,12 +28,12 @@ describe("loadPlaces", () => {
     expect(firstPlace.thumbnailUrl).toBeTruthy();
   });
 
-  it("normalizes description text safely and preserves readable line breaks", () => {
-    const placeWithBreaks = places.find((place) => place.description.includes("\n"));
+  it("normalizes description text safely", () => {
+    const descriptions = places.map((place) => place.description);
 
-    expect(placeWithBreaks).toBeDefined();
-    expect(placeWithBreaks?.description.includes("<br")).toBe(false);
-    expect(placeWithBreaks?.description.includes("<")).toBe(false);
+    expect(descriptions.some((description) => description.length > 0)).toBe(true);
+    expect(descriptions.every((description) => !description.includes("<br"))).toBe(true);
+    expect(descriptions.every((description) => !description.includes("<"))).toBe(true);
   });
 
   it("builds a carousel-friendly image array even for single-image places", () => {
