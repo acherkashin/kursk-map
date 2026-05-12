@@ -16,7 +16,6 @@ const place: Place = {
   imageUrl: "https://gokursk.ru/example.jpg",
   thumbnailUrl: "/place-thumbnails/example.webp",
   detailsUrl: "https://gokursk.ru/details",
-  section: "8",
   categoryType: "204",
   ctaLabel: "Узнать подробнее",
 };

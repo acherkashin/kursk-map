@@ -78,7 +78,6 @@ export function normalizePlaces(raw: RawFeatureCollection): Place[] {
       imageUrl,
       thumbnailUrl,
       detailsUrl,
-      section: feature.properties.section,
       categoryType: feature.properties.type,
       ctaLabel: content.button.trim() || "Узнать подробнее",
     };

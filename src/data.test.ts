@@ -5,7 +5,7 @@ describe("loadPlaces", () => {
   const places = loadPlaces();
 
   it("normalizes every object from the default featured source file", () => {
-    expect(places).toHaveLength(12);
+    expect(places).toHaveLength(13);
   });
 
   it("keeps Kursk-area coordinates in lat/lon order and exposes explicit fields", () => {

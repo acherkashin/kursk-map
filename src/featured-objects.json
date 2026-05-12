@@ -12,7 +12,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "1009",
         "id": 320,
         "balloonContent": {
@@ -38,7 +37,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "спорт и отдых",
         "id": 2001,
         "balloonContent": {
@@ -64,7 +62,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "спорт и отдых",
         "id": 2002,
         "balloonContent": {
@@ -90,7 +87,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "агротуризм",
         "id": 2003,
         "balloonContent": {
@@ -116,7 +112,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "304",
         "id": 1410,
         "balloonContent": {
@@ -142,7 +137,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "3170",
         "id": 1244,
         "balloonContent": {
@@ -168,7 +162,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "еда",
         "id": 2004,
         "balloonContent": {
@@ -194,7 +187,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "еда",
         "id": 2005,
         "balloonContent": {
@@ -220,7 +212,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "204",
         "id": 91,
         "balloonContent": {
@@ -246,7 +237,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "3170",
         "id": 1430,
         "balloonContent": {
@@ -272,7 +262,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "конный клуб",
         "id": 2006,
         "balloonContent": {
@@ -298,7 +287,6 @@
         ]
       },
       "properties": {
-        "section": "8",
         "type": "велнес",
         "id": 2007,
         "balloonContent": {
@@ -310,6 +298,31 @@
           "coordinates": "50.604900, 36.651200",
           "button": "Открыть сайт",
           "thumbnail": "/place-thumbnails/placeholder.svg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1619,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.720962,
+          36.161583
+        ]
+      },
+      "properties": {
+        "type": "163",
+        "id": 1619,
+        "balloonContent": {
+          "url": "/objects/kukhmisterskaya-atilan/",
+          "image": "/upload/resize_cache/iblock/ac2/f7bhrj76wk3mzvas3965ktnds615uwyz/640_380_0/IMG_9023.JPG",
+          "name": "Кухмистерская Atilan",
+          "description": "Кафе в стиле СССР",
+          "address": "Курск, ул. Асеева 1к1",
+          "coordinates": "51.720962, 36.161583",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1619-2a4268de2a.webp"
         }
       }
     }

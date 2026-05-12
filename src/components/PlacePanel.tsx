@@ -93,10 +93,6 @@ export function PlacePanel({
               <dt>Адрес</dt>
               <dd>{place.address}</dd>
             </div>
-            <div>
-              <dt>Коллекция</dt>
-              <dd>Раздел {place.section}</dd>
-            </div>
           </dl>
 
           <a className="panel-link" href={place.detailsUrl} target="_blank" rel="noreferrer">
