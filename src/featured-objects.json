@@ -375,6 +375,58 @@
           "thumbnail": "/place-thumbnails/1172-theatre-3d.webp"
         }
       }
+    },
+    {
+      "type": "Feature",
+      "id": 81,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.84131,
+          36.06554
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "304",
+        "id": 81,
+        "balloonContent": {
+          "url": "/objects/gostevoy-sad-landizayn/",
+          "image": "/upload/resize_cache/iblock/692/j43k8qztawirdvzqx3u3ah623hjgcl5u/640_380_0/landesigning_17.jpg",
+          "name": "Гостевой сад «Ландизайн»",
+          "description": "Гостевой сад «Ландизайн» — настоящий райский уголок площадью около 1 гектара, в который постоянно съезжаются гости, чтобы сделать красивые фотографии и просто подышать свежим воздухом. К слову, в этом уютном месте богата не только флора, но и фауна. Здесь живет красавец-павлин, фазаны и восемь черепах.",
+          "address": "Курский район・СНТ имени 1 Мая・уч. 221",
+          "coordinates": "51.84131, 36.06554",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/81-7fc929b615.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1132,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.296081,
+          36.304981
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "180",
+        "id": 1132,
+        "balloonContent": {
+          "url": "/objects/memorial-kurskaya-bitva/",
+          "image": "/upload/resize_cache/iblock/cf5/p8ip76h0wjeuzfj1rjyxitfcxds3w4qf/640_380_0/MemorialKurskBattleMalyshko_min.jpg",
+          "name": "Мемориальный комплекс «Курская битва»",
+          "description": "Открыт 23 августа 2023 года в честь 80-летия Победы в Курской битве.",
+          "address": "Курская область, Поныри",
+          "coordinates": "52.296081, 36.304981",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1132-fa72c128a8.webp"
+        }
+      }
     }
   ]
 }
