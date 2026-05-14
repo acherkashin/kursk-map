@@ -1,0 +1,4 @@
+interface:
+  display_name: "Place Enricher"
+  short_description: "Prepare and add map places to existing or new datasets"
+  default_prompt: "Используй $place-enricher, чтобы подготовить и добавить место в существующую или новую подборку карты Курской области."
