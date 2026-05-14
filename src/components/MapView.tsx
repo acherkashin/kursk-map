@@ -31,6 +31,7 @@ type PhotoMarkerRecord = {
 const KURSK_CENTER: [number, number] = [36.191112, 51.730361];
 const INITIAL_ZOOM = 11.4;
 const PHOTO_MARKER_ZOOM_THRESHOLD = 15;
+const PHOTO_MARKER_VISIBLE_PLACE_LIMIT = 50;
 const PLACES_CLUSTER_MAX_ZOOM = 14;
 const ACTIVE_PLACE_FLY_TO_ZOOM = 15.1;
 const PLACES_SOURCE_ID = "places-source";
@@ -129,7 +130,12 @@ function syncPhotoMarkers({
   activePlaceId: number | null;
   onSelectPlace: (place: Place) => void;
 }) {
-  const shouldShowPhotoMarkers = map.getZoom() >= PHOTO_MARKER_ZOOM_THRESHOLD;
+  const bounds = map.getBounds();
+  const visiblePlaces = places.filter((place) => bounds.contains([place.lon, place.lat]));
+  const shouldShowPhotoMarkers =
+    map.getZoom() >= PHOTO_MARKER_ZOOM_THRESHOLD ||
+    visiblePlaces.length < PHOTO_MARKER_VISIBLE_PLACE_LIMIT;
+
   setPlacesLayersVisibility(map, !shouldShowPhotoMarkers);
 
   if (!shouldShowPhotoMarkers) {
@@ -137,14 +143,9 @@ function syncPhotoMarkers({
     return;
   }
 
-  const bounds = map.getBounds();
   const visiblePlaceIds = new Set<number>();
 
-  for (const place of places) {
-    if (!bounds.contains([place.lon, place.lat])) {
-      continue;
-    }
-
+  for (const place of visiblePlaces) {
     visiblePlaceIds.add(place.id);
 
     let record = markers.get(place.id);

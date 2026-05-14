@@ -305,7 +305,7 @@ async function getPlaceIds(page: Parameters<typeof test>[0]["page"]) {
 test("keeps the Kursk city center visible after expanding the nearest visible clusters", async ({
   page,
 }) => {
-  await page.goto("/?e2e=1");
+  await page.goto("/?dataset=all&e2e=1");
 
   await waitForMap(page);
   await waitForClusterLayers(page);
@@ -327,13 +327,34 @@ test("keeps the Kursk city center visible after expanding the nearest visible cl
     .toBe(true);
 });
 
-test("shows photo markers starting at zoom 15 and hides vector place layers", async ({ page }) => {
+test("shows photo markers below zoom 15 when fewer than 50 places are visible", async ({
+  page,
+}) => {
   await page.goto("/?e2e=1");
 
   await waitForMap(page);
   await waitForClusterLayers(page);
 
   await setZoom(page, 14.9);
+
+  await expect
+    .poll(async () => getVisiblePhotoMarkerCount(page))
+    .toBeGreaterThan(0);
+  await expect
+    .poll(async () => getLayerVisibility(page, PLACES_CLUSTERS_LAYER_ID))
+    .toBe("none");
+  await expect
+    .poll(async () => getLayerVisibility(page, PLACES_POINTS_LAYER_ID))
+    .toBe("none");
+});
+
+test("keeps vector place layers below zoom 15 when at least 50 places are visible", async ({
+  page,
+}) => {
+  await page.goto("/?dataset=all&e2e=1");
+
+  await waitForMap(page);
+  await waitForClusterLayers(page);
 
   await expect
     .poll(async () => getVisibleClusterCounts(page).then((counts) => counts.length))
@@ -347,6 +368,13 @@ test("shows photo markers starting at zoom 15 and hides vector place layers", as
   await expect
     .poll(async () => getLayerVisibility(page, PLACES_POINTS_LAYER_ID))
     .toBe("visible");
+});
+
+test("shows photo markers starting at zoom 15 and hides vector place layers", async ({ page }) => {
+  await page.goto("/?dataset=all&e2e=1");
+
+  await waitForMap(page);
+  await waitForClusterLayers(page);
 
   await setZoom(page, 15);
 
