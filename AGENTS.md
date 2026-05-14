@@ -16,6 +16,7 @@ Single-app frontend на `Vite + React + TypeScript` для интерактив
 │   ├── components/                # UI-компоненты карты и боковой панели
 │   ├── featured-objects.json      # дефолтный короткий набор меток
 │   ├── all-objects.json           # полный старый набор меток для ?dataset=all
+│   ├── dozapravka-objects.json    # подборка do zapravka для ?dataset=dozapravka
 │   └── test/                      # test setup и вспомогательная тестовая инфраструктура
 ├── public/                        # статические ассеты приложения
 │   ├── map-styles/                # MapLibre style JSON для базовой карты
@@ -50,7 +51,7 @@ ComponentName/
 
 # Conventions
 - Не переноси нормализацию сырых данных в UI-компоненты; преобразование данных должно оставаться в `src/data.ts`.
-- По умолчанию приложение использует `src/featured-objects.json`; полный старый набор из `src/all-objects.json` открывается через `?dataset=all`.
+- По умолчанию приложение использует `src/featured-objects.json`; полный старый набор из `src/all-objects.json` открывается через `?dataset=all`, подборка do zapravka из `src/dozapravka-objects.json` — через `?dataset=dozapravka`.
 - E2E test hooks открывай только через `?e2e=1`; не делай их доступными в обычном runtime.
 - E2E tests пиши только для критических пользовательских путей; не покрывай ими каждую мелкую деталь интерфейса по умолчанию.
 - Перед добавлением любых тестов отдельно перепроверь, действительно ли изменению нужно тестовое покрытие.

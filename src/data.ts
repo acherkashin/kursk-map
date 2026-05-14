@@ -1,4 +1,5 @@
 import allObjectsCollection from "./all-objects.json";
+import dozapravkaObjectsCollection from "./dozapravka-objects.json";
 import featuredObjectsCollection from "./featured-objects.json";
 import type { Place, RawFeatureCollection } from "./types";
 
@@ -90,7 +91,15 @@ function getSelectedRawCollection() {
       ? null
       : new URLSearchParams(window.location.search).get("dataset");
 
-  return dataset === "all" ? allObjectsCollection : featuredObjectsCollection;
+  if (dataset === "all") {
+    return allObjectsCollection;
+  }
+
+  if (dataset === "dozapravka") {
+    return dozapravkaObjectsCollection;
+  }
+
+  return featuredObjectsCollection;
 }
 
 export function loadPlaces() {
