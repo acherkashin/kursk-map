@@ -1,0 +1,43 @@
+- main [ref=e4]:
+  - generic [ref=e7]:
+    - generic:
+      - region "Map" [ref=e8]
+      - button "Открыть Курский государственный цирк" [ref=e25] [cursor=pointer]:
+        - generic [ref=e26]:
+          - img "Курский государственный цирк" [ref=e28]
+          - generic [ref=e50]: Курский государственный цирк
+    - generic [ref=e9]:
+      - button "Zoom in" [ref=e10] [cursor=pointer]
+      - button "Zoom out" [ref=e12] [cursor=pointer]
+      - button "Drag to rotate map, click to reset north" [ref=e14]
+  - region "Поиск и фильтры мест":
+    - generic [ref=e16]:
+      - generic [ref=e17]: K
+      - generic [ref=e18]:
+        - heading "Короче, Курск" [level=1] [ref=e19]
+        - paragraph [ref=e20]: Путеводитель для местных
+      - button "Войти" [ref=e22] [cursor=pointer]
+    - searchbox "Поиск мест" [active] [ref=e24]: цирк
+  - complementary "Информация о месте Курский государственный цирк" [ref=e51]:
+    - generic [ref=e52]:
+      - button "Добавить в избранное" [ref=e53] [cursor=pointer]: ♡
+      - button "Закрыть карточку" [ref=e54] [cursor=pointer]: Закрыть
+    - generic [ref=e55]:
+      - figure [ref=e56]:
+        - img "Курский государственный цирк" [ref=e57]
+        - generic [ref=e58]:
+          - button "Предыдущее изображение" [disabled] [ref=e59]: ‹
+          - generic [ref=e60]: 1 / 1
+          - button "Следующее изображение" [disabled] [ref=e61]: ›
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]: Weekend pick
+          - generic [ref=e65]: Категория театр
+        - heading "Курский государственный цирк" [level=2] [ref=e66]
+        - paragraph [ref=e67]: Культурно-развлекательный центр в центре Курска на улице Александра Невского.
+        - paragraph [ref=e68]: Культурно-развлекательный центр в центре Курска на улице Александра Невского. На арене проходят цирковые программы для детей и взрослых, а перед зданием установлен памятник Юрию Никулину и Михаилу Шуйдину.
+        - generic [ref=e70]:
+          - term [ref=e71]: Адрес
+          - definition [ref=e72]: Курск, ул. Александра Невского, 4
+        - link "Открыть сайт" [ref=e73] [cursor=pointer]:
+          - /url: https://www.circus-kursk.ru/

@@ -557,6 +557,446 @@
           "thumbnail": "/place-thumbnails/1132-fa72c128a8.webp"
         }
       }
+    },
+    {
+      "type": "Feature",
+      "id": 2009,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.742172,
+          36.209818
+        ]
+      },
+      "properties": {
+        "type": "спорт и отдых",
+        "id": 2009,
+        "balloonContent": {
+          "url": "https://5verst.ru/boevadacha/",
+          "image": "https://5verst.ru/boevadacha/wp-content/uploads/sites/86/2023/06/Boeva_dacha-1024x682.jpg",
+          "name": "5 вёрст Боева Дача",
+          "description": "Бесплатные дружеские старты на 5 км каждую субботу в 9:00 в парке Боева Дача. Дистанцию можно пробежать или пройти пешком в любом комфортном темпе; мероприятие проводят волонтёры, а для участия нужна предварительная регистрация и QR-код. Парк Боева Дача с 2021 года имеет статус природного парка регионального значения и расположен в пойме реки Тускарь.",
+          "address": "Курск, Тускарная улица, 7・парк Боева Дача",
+          "coordinates": "51.742172, 36.209818",
+          "button": "Открыть страницу",
+          "thumbnail": "https://get.run/upload/resize_cache/iblock_resize/21f/458_458_1/21f76729cd05262e5513682bc6a58cf2.jpg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1465,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.716408,
+          36.133998
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "907",
+        "id": 1465,
+        "balloonContent": {
+          "url": "/objects/kofeynya-pyshki-i-ne-tolko/",
+          "image": "/upload/resize_cache/iblock/e28/z3zcb26jmo0jq4d8evnvfiz76rv0qqab/640_380_0/XXXL_1_.jpg",
+          "name": "Кофейня «Пышки и не только»",
+          "description": "Кофейня с пышками собственного приготовления",
+          "address": "Курск, проспект Вячеслава Клыкова, 101",
+          "coordinates": "51.716408, 36.133998",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1465-91d2bc7ddf.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2010,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.725692,
+          36.189296
+        ]
+      },
+      "properties": {
+        "type": "театр",
+        "id": 2010,
+        "balloonContent": {
+          "url": "https://www.circus-kursk.ru/",
+          "image": "https://welcomekursk.ru/uploads/b8bfa85e931868656b9414daa2b07f9e_w600_h400_cx60_cy0_cw1460_ch1000.jpg",
+          "name": "Курский государственный цирк",
+          "description": "Культурно-развлекательный центр в центре Курска на улице Александра Невского. На арене проходят цирковые программы для детей и взрослых, а перед зданием установлен памятник Юрию Никулину и Михаилу Шуйдину.",
+          "address": "Курск, ул. Александра Невского, 4",
+          "coordinates": "51.725692, 36.189296",
+          "button": "Открыть сайт",
+          "thumbnail": "https://welcomekursk.ru/uploads/b8bfa85e931868656b9414daa2b07f9e_w600_h400_cx60_cy0_cw1460_ch1000.jpg"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1247,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.724051,
+          36.113527
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3304",
+        "id": 1247,
+        "balloonContent": {
+          "url": "/objects/gornolyzhnyy-sklon/",
+          "image": "/upload/resize_cache/iblock/696/rxg64hmawcbimu9rjj50hzqmueq2yrak/640_380_0/Sklon.jpg",
+          "name": "Горнолыжный склон",
+          "description": "Склон с рельефом и бугельным подъёмником. Для лыжников и сноубордистов. ",
+          "address": "улица Вольная, напротив переулка 2-й Вольный",
+          "coordinates": "51.724051, 36.113527",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1247-f4212bb5d6.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 112,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.732302,
+          36.187311
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "296",
+        "id": 112,
+        "balloonContent": {
+          "url": "/objects/kostel/",
+          "image": "/upload/resize_cache/iblock/fc9/vyrgndgk4j19dg04a44ubyc7f1g9x0u5/640_380_0/Rimsko_Katolicheskiy-_4_.jpg",
+          "name": "Римско-католический костел",
+          "description": "Увидеть в Курске католическое здание — большая редкость, а если оно еще и привлекает взгляды прохожих своей красотой и габаритами заметными издалека, его по праву можно считать настоящей достопримечательностью. \r\n\r\nХрам Успения Богородицы появился в конце XIX века и расположился на крутом западном склоне холма, на котором родился и сам Курск. Вокруг костел окружен плотной городской застройкой и уже на протяжении сотни лет порождает немало легенд, окутанных мистическими тайнами.",
+          "address": "г. Курск・ул. Марата, 27",
+          "coordinates": "51.732302, 36.187311",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/112-5da9b0ab9a.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 322,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.747377,
+          35.061308
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 322,
+        "balloonContent": {
+          "url": "/objects/baza-otdykha-serebryano/",
+          "image": "/upload/resize_cache/iblock/4f0/0m4xuv13hpxxy6y426wxwhx18ln081m1/640_380_0/ASmq4pn4sZQ.jpg",
+          "name": "База отдыха «Серебряно»",
+          "description": "База отдыха для тех, кто хочет в полной мере насладиться природой с семьей, друзьями, коллегами.",
+          "address": "Льговский район・х. Серебряный",
+          "coordinates": "51.747377, 35.061308",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/322-3909b1f978.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 336,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.743669,
+          36.34731
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 336,
+        "balloonContent": {
+          "url": "/objects/zagorodnyy-klub-shale-u-lesa/",
+          "image": "/upload/resize_cache/iblock/77c/ney0dl1wb80iw4uhqoyjcz3lw817xk2r/640_380_0/shale_y_lesa_image_2021_12_17_1-_4_.jpg",
+          "name": "Загородный клуб «Шале у леса»",
+          "description": "Дома для уединенного отдыха в Курске.",
+          "address": "Курский район・д. Халино",
+          "coordinates": "51.743669, 36.347310",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/336-e99253ab9d.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1516,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.246253,
+          36.414958
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1516,
+        "balloonContent": {
+          "url": "/objects/yakhonty-krasnikovo-eko-otel/",
+          "image": "/upload/resize_cache/iblock/52e/9na632y0st283tnqizc67xq3h72b0jvr/640_380_0/2024_12_26_063.jpg",
+          "name": "«Яхонты Красниково» эко-отель",
+          "description": "Эко-отель на территории этнографического кластера «Парк Мельниц»",
+          "address": "Пристенский район, с. Красниково",
+          "coordinates": "51.246253, 36.414958",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1516-ece15bafe8.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1588,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.913733,
+          36.043247
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1588,
+        "balloonContent": {
+          "url": "/objects/glemping-novoshemyakino/",
+          "image": "/upload/resize_cache/iblock/a32/arpqqwqdv37ojxqyzutf9d3qsd2w2d1w/640_380_0/bEixJWoFMvA_1_.jpg",
+          "name": "Глэмпинг НовоШемякино",
+          "description": "Сферические домики на берегу водоёма",
+          "address": "Курский район, деревня 2-е Шемякино",
+          "coordinates": "51.913733, 36.043247",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1588-764e9535a9.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1591,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.693699,
+          35.954324
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1591,
+        "balloonContent": {
+          "url": "/objects/glemping-berloga-barn/",
+          "image": "/upload/resize_cache/iblock/bcd/pgl690jrxn14011pycwlvkau20f7a1mh/640_380_0/W3APLWqpr3c_1_.jpg",
+          "name": "Глэмпинг Berloga Barn",
+          "description": "Атмосферные дома недалеко от Курска",
+          "address": "Курский район, СНТ Сударушка, 44",
+          "coordinates": "51.693699, 35.954324",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1591-e70c89886e.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1592,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.694625,
+          35.959445
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1592,
+        "balloonContent": {
+          "url": "/objects/forest-house/",
+          "image": "/upload/resize_cache/iblock/db1/1osx8l7vi3lvy759myo1dxbsir34hjcq/640_380_0/eQx55IXehYk_1_.jpg",
+          "name": "Forest House",
+          "description": "Домики в сосновом лесу недалеко от Курска",
+          "address": "Курский район, СНТ Сударушка",
+          "coordinates": "51.694625, 35.959445",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1592-489185a498.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1593,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.694212,
+          35.951586
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1593,
+        "balloonContent": {
+          "url": "/objects/tishina/",
+          "image": "/upload/resize_cache/iblock/ef4/go9zac52gojahhuau21eqgx4c9un3n47/640_380_0/F88a_psnDMU_1_.jpg",
+          "name": "Тишина",
+          "description": "Домик в сосновом лесу",
+          "address": "Курский район, СНТ Сударушка",
+          "coordinates": "51.694212, 35.951586",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1593-0063d14a91.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1597,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.91647,
+          36.278758
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1597,
+        "balloonContent": {
+          "url": "/objects/riverland/",
+          "image": "/upload/resize_cache/iblock/6a7/403xwj30z0x43m9fsdukbassk0bnls0o/640_380_0/avenSpMGtSw_1_.jpg",
+          "name": "Riverland",
+          "description": "Пять современных шале на природе",
+          "address": "Золотухинский р-он, Тазовский сельсовет, д. Никольское, д.111",
+          "coordinates": "51.916470, 36.278758",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1597-2cee2794c2.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1598,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.92091,
+          36.273244
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1598,
+        "balloonContent": {
+          "url": "/objects/shale-u-reki/",
+          "image": "/upload/resize_cache/iblock/79a/o1p4tyuawovwcl617rbr36nwbm5htix0/640_380_0/instagram_CjVH0QqosAR.jpg",
+          "name": "Шале у реки",
+          "description": "Домик на берегу реки Тускарь",
+          "address": "Золотухинский район, Тазовский сельсовет",
+          "coordinates": "51.920910, 36.273244",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1598-a8829af524.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1599,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.725309,
+          36.342965
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1599,
+        "balloonContent": {
+          "url": "/objects/yelki-igolki/",
+          "image": "/upload/resize_cache/iblock/dec/dft60qrw024o6g1o6qab9w8tmxqhg1f6/640_380_0/yoyolki.jpg",
+          "name": "Ёлки-иголки",
+          "description": "Шале в 10 минутах от города",
+          "address": "Курский район, д. Долгое, ул. Клюквинская, 36",
+          "coordinates": "51.725309, 36.342965",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1599-e60ac8cc62.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1600,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.820379,
+          36.193542
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1600,
+        "balloonContent": {
+          "url": "/objects/shik-shale/",
+          "image": "/upload/resize_cache/iblock/414/acpw2ujyd745q931jbfjsg935phetcoc/640_380_0/VMsAAUNsofs_1_.jpg",
+          "name": "Шик&Шале",
+          "description": "Домик с бассейном с подогревом",
+          "address": "Курский район, Пашковский сельсовет, СНТ Верховье, 847",
+          "coordinates": "51.820379, 36.193542",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1600-9258d440a4.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1601,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.881775,
+          36.248039
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "3104",
+        "id": 1601,
+        "balloonContent": {
+          "url": "/objects/shale-river-house/",
+          "image": "/upload/resize_cache/iblock/998/fcnk2k13vvwxhpqcyqab2k85zxy7h7bt/640_380_0/YlIfeoU5tts_1_.jpg",
+          "name": "Шале «River House»",
+          "description": "Шале в 35 км от Курска",
+          "address": "Золотухинский район, деревня Терепша, дом 57",
+          "coordinates": "51.881775, 36.248039",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1601-c0bbfeb56c.webp"
+        }
+      }
     }
   ]
 }

@@ -1,11 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { loadPlaces } from "./data";
+import featuredObjectsCollection from "./featured-objects.json";
 
 describe("loadPlaces", () => {
   const places = loadPlaces();
 
   it("normalizes every object from the default featured source file", () => {
-    expect(places).toHaveLength(15);
+    expect(places).toHaveLength(featuredObjectsCollection.features.length);
   });
 
   it("keeps Kursk-area coordinates in lat/lon order and exposes explicit fields", () => {
