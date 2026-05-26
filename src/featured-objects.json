@@ -28,6 +28,136 @@
     },
     {
       "type": "Feature",
+      "id": 29,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.255752,
+          36.41746
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "164",
+        "id": 29,
+        "balloonContent": {
+          "url": "/objects/vodyanaya-melnitsa/",
+          "image": "/upload/resize_cache/iblock/72e/ml9l453w1ng43cjc0c2vf5sc012rq446/640_380_0/melnitsa_211.jpg",
+          "name": "Водяная мельница",
+          "description": "Старейшая работающая деревянная водяная мельница в Черноземье, изначально построенная без единого гвоздя. ",
+          "address": "Пристенский район・с. Красниково",
+          "coordinates": "51.255752, 36.417460",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/29-5efc031818.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 86,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.234002,
+          36.063904
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "269",
+        "id": 86,
+        "balloonContent": {
+          "url": "/objects/teplovskie-vysoty/",
+          "image": "/upload/resize_cache/iblock/128/ccpe2jonrujdim3erqf4b2ul4xc1yihc/640_380_0/11_11_31.jpg",
+          "name": "«Тепловские высоты»",
+          "description": "Масштабный монумент в форме ордена «Отечественной войны» расположен в месте ожесточённых сражений на Курской дуге. Смотровая площадка стоит на высоте 274,5.",
+          "address": "Поныровский р-н",
+          "coordinates": "52.234002, 36.063904",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/86-715fb0bbe5.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 76,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.249344,
+          36.015628
+        ]
+      },
+      "properties": {
+        "section": "7",
+        "type": "180",
+        "id": 76,
+        "balloonContent": {
+          "url": "/objects/memorialnyy-kompleks-poklonnaya-vysota-269/",
+          "image": "/upload/resize_cache/iblock/a7f/y17zpkftdu3ttymxri3gkspmz168bciw/640_380_0/Poklonnaya-vysota-_-Malafeev-_5_11.jpg",
+          "name": "Мемориальный комплекс «Поклонная высота 269»",
+          "description": "Мемориальный комплекс «Поклонная высота 269» находится у села Молотычи Фатежского района. Он увековечивает подвиг советских воинов, не допустивших прорыва немецко-фашистских захватчиков к Курску в июле 1943 года.\r\n",
+          "address": "Фатежский район・с. Молотычи",
+          "coordinates": "52.249344, 36.015628",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/76-72250c0b00.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 96,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.340985,
+          35.342134
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "304",
+        "id": 96,
+        "balloonContent": {
+          "url": "/objects/zheleznogorskiy-dendrologicheskiy-park/",
+          "image": "/upload/resize_cache/iblock/122/iq71j9j158ywranziuyti642doszq3b3/640_380_0/250720-Dendrariy-012new.jpg",
+          "name": "Железногорский дендрологический парк",
+          "description": "Экологический парк на особо охраняемой природной территории. Был создан в 1996 году к 40-летию города Железногорска.",
+          "address": "г. Железногорск・ул. Дружбы",
+          "coordinates": "52.340985, 35.342134",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/96-55eca58a28.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1587,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.063583,
+          36.346307
+        ]
+      },
+      "properties": {
+        "section": "8",
+        "type": "1009",
+        "id": 1587,
+        "balloonContent": {
+          "url": "/objects/baza-otdykha-donvillage/",
+          "image": "/upload/resize_cache/iblock/0a5/h9k99ys7k3xcez3ai7oe7ybn3cflbtes/640_380_0/OKbR6CMeD7Q_1_.jpg",
+          "name": "База отдыха «DonVillage»",
+          "description": "Современная база отдыха рядом с м. Свобода на водоеме в 30 км от Курска",
+          "address": "Золотухинский р-н, д. Реутово 158",
+          "coordinates": "52.063583, 36.346307",
+          "button": "Узнать подробнее",
+          "thumbnail": "/place-thumbnails/1587-9473c21229.webp"
+        }
+      }
+    },
+    {
+      "type": "Feature",
       "id": 2001,
       "geometry": {
         "type": "Point",
