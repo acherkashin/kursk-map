@@ -511,6 +511,12 @@ button {
   font-size: 0.9rem;
 }
 
+.panel-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
 .panel-link {
   display: inline-flex;
   align-items: center;
@@ -527,6 +533,8 @@ button {
   box-shadow: 0 12px 24px rgba(46, 107, 255, 0.24);
   transition:
     background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease,
     box-shadow 120ms ease,
     transform 120ms ease;
 }
@@ -535,6 +543,20 @@ button {
   background: var(--accent-ink);
   box-shadow: 0 16px 28px rgba(46, 107, 255, 0.3);
   transform: translateY(-1px);
+}
+
+.panel-link--route {
+  border: 1px solid rgba(46, 107, 255, 0.22);
+  background: var(--accent-wash);
+  color: var(--accent-ink);
+  box-shadow: none;
+}
+
+.panel-link--route:hover {
+  border-color: rgba(46, 107, 255, 0.36);
+  background: #dce7ff;
+  color: var(--accent-ink);
+  box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 1023px) {

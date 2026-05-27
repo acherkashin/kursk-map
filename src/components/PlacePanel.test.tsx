@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { PlacePanel } from "./PlacePanel";
 import type { Place } from "../types";
+import { buildYandexRouteUrls } from "../yandexRoutes";
 
 const place: Place = {
   id: 1,
@@ -31,7 +32,9 @@ describe("PlacePanel", () => {
   it("renders selected place details and keeps carousel controls safe for a single image", async () => {
     const user = userEvent.setup();
 
-    render(<PlacePanel place={place} onClose={() => undefined} />);
+    const routeUrls = buildYandexRouteUrls(place.lat, place.lon);
+
+    render(<PlacePanel place={place} routeUrls={routeUrls} onClose={() => undefined} />);
 
     expect(screen.getByRole("heading", { name: "Марьино" })).toBeInTheDocument();
     expect(screen.getByText("1 / 1")).toBeInTheDocument();
@@ -43,6 +46,11 @@ describe("PlacePanel", () => {
     expect(screen.getByRole("link", { name: "Узнать подробнее" })).toHaveAttribute(
       "href",
       "https://gokursk.ru/details",
+    );
+
+    expect(screen.getByRole("link", { name: "Построить маршрут" })).toHaveAttribute(
+      "href",
+      "https://yandex.ru/maps/?mode=routes&rtext=~51.5,35.2&rtt=auto",
     );
   });
 });

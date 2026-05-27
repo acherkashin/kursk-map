@@ -42,13 +42,13 @@
         "id": 2010,
         "balloonContent": {
           "url": "https://2gis.ru/kursk/firm/70000001105329912",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://p2.zoon.ru/preview/GRAjcQx00labKmp_YwDAPg/2400x1500x75/1/f/0/original_690544fa6d051ad23e066581_6932e0016ee5c3.55442537.jpg",
           "name": "Мясное место",
           "description": "Демократичный ресторан в центре Курска с мясными блюдами, стейками, бургерами и грилем.",
           "address": "Курск, ул. Ленина, 2, 1 этаж",
           "coordinates": "51.731890, 36.192332",
           "button": "Открыть подробности",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://p2.zoon.ru/preview/GRAjcQx00labKmp_YwDAPg/2400x1500x75/1/f/0/original_690544fa6d051ad23e066581_6932e0016ee5c3.55442537.jpg"
         }
       }
     },
@@ -67,13 +67,13 @@
         "id": 2011,
         "balloonContent": {
           "url": "https://www.tomato-pizza.ru/restaurants/kursk/vklykova",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://www.tomato-pizza.ru/files/products/1e32812641ef4d9bb4da10ceebb40ab0556.webp",
           "name": "Томато",
           "description": "Ресторан сети «Томато» на проспекте Вячеслава Клыкова с пиццей, основным меню и детской зоной.",
           "address": "Курск, пр-т Вячеслава Клыкова, 1А",
           "coordinates": "51.721893, 36.134479",
           "button": "Узнать подробнее",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://www.tomato-pizza.ru/files/products/1e32812641ef4d9bb4da10ceebb40ab0556.webp"
         }
       }
     },
@@ -92,13 +92,13 @@
         "id": 2012,
         "balloonContent": {
           "url": "https://fornomio.ru/",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://static.tildacdn.com/tild6535-6435-4530-b936-346230333137/photo.png",
           "name": "Forno Mio",
           "description": "Итальянский ресторан в центре Курска с открытой кухней, домашней пастой, римской пиццей и десертами.",
           "address": "Курск, ул. Ленина, 12, ЦУМ",
           "coordinates": "51.733711, 36.192502",
           "button": "Узнать подробнее",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://static.tildacdn.com/tild6535-6435-4530-b936-346230333137/photo.png"
         }
       }
     },
@@ -117,13 +117,13 @@
         "id": 2013,
         "balloonContent": {
           "url": "https://2gis.ru/kursk/search/%D0%97%D0%B0%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://chickenhouse.ru/upload/resize_cache/uf/d60/1120_745_2/2tfwwvxpn4sccdvy1vc0y5t2j18hfuli.jpeg",
           "name": "Чикен Хауз",
           "description": "Ресторан быстрого питания в ТЦ «Олимп» с блюдами из курицы и быстрым сервисом.",
           "address": "Курск, Сумская ул., 31, ТЦ «Олимп»",
           "coordinates": "51.710076, 36.148499",
           "button": "Открыть подробности",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://chickenhouse.ru/upload/resize_cache/uf/d60/1120_745_2/2tfwwvxpn4sccdvy1vc0y5t2j18hfuli.jpeg"
         }
       }
     },
@@ -142,13 +142,13 @@
         "id": 2014,
         "balloonContent": {
           "url": "https://2gis.ru/kursk/search/%D0%9A%D0%BE%D0%BD%D0%B4%D0%B8%D1%82%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://img02.restaurantguru.ru/c226-Cafe-Souffle-bar-drink.jpg",
           "name": "Souffle BAR",
           "description": "Кафе-кондитерская в центре Курска с десертами, кофе, bubble tea и напитками навынос.",
           "address": "Курск, ул. Ленина, 72",
           "coordinates": "51.743208, 36.193680",
           "button": "Открыть подробности",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://img02.restaurantguru.ru/c226-Cafe-Souffle-bar-drink.jpg"
         }
       }
     },
@@ -167,13 +167,13 @@
         "id": 2015,
         "balloonContent": {
           "url": "https://zoon.ru/kursk/restaurants/sluzhba_dostavki_ris_i_testo/social/",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://img4.restaurantguru.ru/w550/h367/r598-Ris-i-Testo-interior-2026-05.jpg",
           "name": "Рис и Тесто",
           "description": "Служба доставки еды в Курске; публичные карточки относят заведение к доставке готовых блюд.",
           "address": "Курск, Запольная ул., 45Б, киоск",
           "coordinates": "51.742837, 36.151863",
           "button": "Открыть подробности",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://img4.restaurantguru.ru/w550/h367/r598-Ris-i-Testo-interior-2026-05.jpg"
         }
       }
     },
@@ -192,13 +192,13 @@
         "id": 2016,
         "balloonContent": {
           "url": "https://gokursk.ru/objects/bezymyannyy-pab/",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "/upload/resize_cache/iblock/3cc/wutgjojcaw8fvtj750htwk4xxtudh4lp/640_380_0/iVB8vBmzBuc_1_.jpg",
           "name": "Безымянный паб",
           "description": "Speak easy бар в здании бывших Дмитриевских конюшен с собственной кухней и большим выбором напитков.",
           "address": "Курск, ул. Димитрова, 66/1",
           "coordinates": "51.743125, 36.186251",
           "button": "Узнать подробнее",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "/place-thumbnails/1415-3906d52ff6.webp"
         }
       }
     },
@@ -217,13 +217,13 @@
         "id": 2017,
         "balloonContent": {
           "url": "https://makalihinkali.ru/",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://makalihinkali.ru/website/img/slider/slide_1_2021.jpg",
           "name": "Макали Хинкали",
           "description": "Ресторан кавказской кухни в Курске с хинкали, шашлыком, осетинскими пирогами и доставкой.",
           "address": "Курск, ул. Ломакина, 17",
           "coordinates": "51.757720, 36.185757",
           "button": "Узнать подробнее",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://makalihinkali.ru/website/img/slider/slide_1_2021.jpg"
         }
       }
     },
@@ -242,13 +242,13 @@
         "id": 2018,
         "balloonContent": {
           "url": "https://restaurantguru.ru/Vysota-Kursk",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://img.restaurantguru.ru/reviews/small/w550/h367/1099366.jpg",
           "name": "Высота",
           "description": "Итальянский ресторан в Курске с пастой, пиццей, десертами и видом из зала.",
           "address": "Курск, ул. Ленина, 60А",
           "coordinates": "51.738703, 36.193657",
           "button": "Открыть подробности",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://img.restaurantguru.ru/reviews/small/w550/h367/1099366.jpg"
         }
       }
     },
@@ -267,13 +267,13 @@
         "id": 2019,
         "balloonContent": {
           "url": "https://gogia46.ru/contacts/",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://gogia46.ru/wp-content/uploads/2026/04/0960-1024x958.jpg",
           "name": "Гогия",
           "description": "Грузинский ресторан с хинкали, мясными блюдами, десертами и доставкой.",
           "address": "Курск, ул. Кирова, 2А, ЦУМ",
           "coordinates": "51.734005, 36.191894",
           "button": "Узнать подробнее",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://gogia46.ru/wp-content/uploads/2026/04/0960-1024x958.jpg"
         }
       }
     },
@@ -292,13 +292,13 @@
         "id": 2020,
         "balloonContent": {
           "url": "https://nbcake.ru/",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://nbcake.ru/wp-content/uploads/2025/03/3k1a4991.webp",
           "name": "NB cake",
           "description": "Кафе-кондитерская в лофт-комплексе Zavod с завтраками, напитками и десертами собственного производства.",
           "address": "Курск, ул. Димитрова, 66",
           "coordinates": "51.743125, 36.186251",
           "button": "Узнать подробнее",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://nbcake.ru/wp-content/uploads/2025/03/3k1a4991.webp"
         }
       }
     },
@@ -342,13 +342,13 @@
         "id": 2021,
         "balloonContent": {
           "url": "https://2gis.ru/kursk/firm/70000001096089572",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://img3.restaurantguru.com/w550/h367/r4e3-Wakanda-design-2025-05-2.jpg",
           "name": "Wakanda",
           "description": "Ресторан в бизнес-центре «Электроприбор» на улице Ленина.",
           "address": "Курск, ул. Ленина, 90/2, 1 этаж",
           "coordinates": "51.745887, 36.193717",
           "button": "Открыть подробности",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://img3.restaurantguru.com/w550/h367/r4e3-Wakanda-design-2025-05-2.jpg"
         }
       }
     },
@@ -367,13 +367,13 @@
         "id": 2022,
         "balloonContent": {
           "url": "https://chaihana-46.orgs.biz/",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://sun9-61.userapi.com/impg/H9yKX6FMp_GUN7nDipxuh-f29NMc2XPysvRO0g/sHvZOLI5d5M.jpg?crop=0,0,0.999,1&size=0x400&quality=95&sign=3b14707166f953e8989810d4762bc610&c_uniq_tag=rDRQX-GVefJuI_W2oX99d5ZUJEbX4srisAY17_XwKXE",
           "name": "Чайхана",
           "description": "Ресторан восточной кухни на 4 этаже ТРЦ Central Park.",
           "address": "Курск, ул. Карла Маркса, 6, ТРЦ Central Park, 4 этаж",
           "coordinates": "51.748955, 36.191721",
           "button": "Открыть подробности",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://sun9-61.userapi.com/impg/H9yKX6FMp_GUN7nDipxuh-f29NMc2XPysvRO0g/sHvZOLI5d5M.jpg?crop=0,0,0.999,1&size=0x400&quality=95&sign=3b14707166f953e8989810d4762bc610&c_uniq_tag=rDRQX-GVefJuI_W2oX99d5ZUJEbX4srisAY17_XwKXE"
         }
       }
     },
@@ -417,13 +417,13 @@
         "id": 2023,
         "balloonContent": {
           "url": "https://шефалекс.рф/",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://static.tildacdn.com/tild3738-6162-4831-b133-383161333534/photo.png",
           "name": "Chef Alex Pizza",
           "description": "Курское производство замороженной итальянской пиццы для точек общественного питания.",
           "address": "Курск, ул. Кавказская, 41А",
           "coordinates": "51.765124, 36.179884",
           "button": "Узнать подробнее",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://static.tildacdn.com/tild3738-6162-4831-b133-383161333534/photo.png"
         }
       }
     },
@@ -442,13 +442,13 @@
         "id": 2024,
         "balloonContent": {
           "url": "https://welcomekursk.ru/places/1506/kafe-zavtrak-tebe",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://welcomekursk.ru/uploads/eee7ea8a980ace078fc8f7a414d8ed5a.jpg",
           "name": "Завтрак тебе",
           "description": "Кафе во дворе Дмитриевских конюшен с завтраками в течение дня, десертами, кофе, смузи и авторскими напитками.",
           "address": "Курск, ул. Димитрова, 66, вход со двора",
           "coordinates": "51.743125, 36.186251",
           "button": "Узнать подробнее",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://welcomekursk.ru/uploads/eee7ea8a980ace078fc8f7a414d8ed5a.jpg"
         }
       }
     },
@@ -467,13 +467,13 @@
         "id": 2025,
         "balloonContent": {
           "url": "https://2gis.ru/kursk/firm/70000001039075585",
-          "image": "/place-thumbnails/placeholder.svg",
+          "image": "https://likengo.ru/uploads/12/10/161266528368d0761845880.jpg",
           "name": "Гуарана",
           "description": "Гастробар в центре Курска с европейской кухней, бизнес-ланчами, винной картой и вечерней программой.",
           "address": "Курск, ул. Александра Невского, 8В, 1 этаж",
           "coordinates": "51.724961, 36.188665",
           "button": "Открыть подробности",
-          "thumbnail": "/place-thumbnails/placeholder.svg"
+          "thumbnail": "https://likengo.ru/uploads/12/10/161266528368d0761845880.jpg"
         }
       }
     }

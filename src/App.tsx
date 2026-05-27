@@ -6,6 +6,7 @@ import { loadPlaces } from "./data";
 import { useFavoritesAuth } from "./hooks/useFavoritesAuth";
 import { filterPlaces } from "./placeFilters";
 import type { Place } from "./types";
+import { buildYandexRouteUrls } from "./yandexRoutes";
 
 const places = loadPlaces();
 export const SEARCH_DEBOUNCE_MS = 180;
@@ -39,6 +40,9 @@ export default function App() {
   const isActivePlaceFavoritePending = activePlace
     ? pendingFavoritePlaceIds.has(activePlace.id)
     : false;
+  const activePlaceRouteUrls = activePlace
+    ? buildYandexRouteUrls(activePlace.lat, activePlace.lon)
+    : null;
 
   useEffect(() => {
     if (searchInputValue === searchQuery) {
@@ -138,6 +142,7 @@ export default function App() {
 
         <PlacePanel
           place={activePlace}
+          routeUrls={activePlaceRouteUrls}
           isFavorite={activePlaceIsFavorite}
           isFavoritePending={isActivePlaceFavoritePending}
           onToggleFavorite={toggleFavorite}

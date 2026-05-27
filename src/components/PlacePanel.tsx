@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import type { Place } from "../types";
+import { openYandexRoute, type YandexRouteUrls } from "../yandexRoutes";
 
 type PlacePanelProps = {
   place: Place | null;
+  routeUrls?: YandexRouteUrls | null;
   isFavorite?: boolean;
   isFavoritePending?: boolean;
   onToggleFavorite?: (place: Place) => void;
@@ -11,6 +13,7 @@ type PlacePanelProps = {
 
 export function PlacePanel({
   place,
+  routeUrls = null,
   isFavorite = false,
   isFavoritePending = false,
   onToggleFavorite,
@@ -95,9 +98,26 @@ export function PlacePanel({
             </div>
           </dl>
 
-          <a className="panel-link" href={place.detailsUrl} target="_blank" rel="noreferrer">
-            {place.ctaLabel}
-          </a>
+          <div className="panel-links">
+            {routeUrls ? (
+              <a
+                className="panel-link panel-link--route"
+                href={routeUrls.webUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(event) => {
+                  event.preventDefault();
+                  openYandexRoute(routeUrls);
+                }}
+              >
+                Построить маршрут
+              </a>
+            ) : null}
+
+            <a className="panel-link" href={place.detailsUrl} target="_blank" rel="noreferrer">
+              {place.ctaLabel}
+            </a>
+          </div>
         </div>
       </div>
     </aside>
