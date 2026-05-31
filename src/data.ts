@@ -1,6 +1,7 @@
 import allObjectsCollection from "./all-objects.json";
 import dozapravkaObjectsCollection from "./dozapravka-objects.json";
 import featuredObjectsCollection from "./featured-objects.json";
+import zapishuzarisuyuObjectsCollection from "./zapishu-zarisuyu-objects.json";
 import type { Place, RawFeatureCollection } from "./types";
 
 const BASE_URL = "https://gokursk.ru";
@@ -80,7 +81,7 @@ export function normalizePlaces(raw: RawFeatureCollection): Place[] {
       thumbnailUrl,
       detailsUrl,
       categoryType: feature.properties.type,
-      ctaLabel: content.button.trim() || "Узнать подробнее",
+      ctaLabel: content.button?.trim() ?? "Узнать подробнее",
     };
   });
 }
@@ -97,6 +98,10 @@ function getSelectedRawCollection() {
 
   if (dataset === "dozapravka") {
     return dozapravkaObjectsCollection;
+  }
+
+  if (dataset === "zapishu_zarisuyu") {
+    return zapishuzarisuyuObjectsCollection;
   }
 
   return featuredObjectsCollection;

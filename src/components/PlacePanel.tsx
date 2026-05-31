@@ -114,9 +114,11 @@ export function PlacePanel({
               </a>
             ) : null}
 
-            <a className="panel-link" href={place.detailsUrl} target="_blank" rel="noreferrer">
-              {place.ctaLabel}
-            </a>
+            {place.ctaLabel && (
+              <a className="panel-link" href={place.detailsUrl} target="_blank" rel="noreferrer">
+                {place.ctaLabel}
+              </a>
+            )}
           </div>
         </div>
       </div>

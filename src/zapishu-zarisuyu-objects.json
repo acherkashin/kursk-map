@@ -1,0 +1,467 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.735498, 36.191748]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 1,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/1.jpg",
+          "thumbnail": "/place-thumbnails/sketches/1.jpg",
+          "name": "КГУ",
+          "description": "Курский государственный университет — главный учебный корпус на улице Радищева. Один из старейших вузов Курска, основан в 1934 году.",
+          "address": "ул. Радищева, 33",
+          "coordinates": "51.735498, 36.191748",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.749056, 36.194902]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 2,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/2.jpg",
+          "thumbnail": "/place-thumbnails/sketches/2.jpg",
+          "name": "КГМУ",
+          "description": "Курский государственный медицинский университет — один из ведущих медицинских вузов России. Основан в 1935 году, готовит врачей более 80 лет.",
+          "address": "ул. Карла Маркса, 3",
+          "coordinates": "51.749056, 36.194902",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.730975, 36.190069]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 3,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/3.jpg",
+          "thumbnail": "/place-thumbnails/sketches/3.jpg",
+          "name": "Ул. Радищева, 12",
+          "description": "Историческое здание в центре Курска на улице Радищева.",
+          "address": "ул. Радищева, 12",
+          "coordinates": "51.730975, 36.190069",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.736006, 36.189251]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 4,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/4.jpg",
+          "thumbnail": "/place-thumbnails/sketches/4.jpg",
+          "name": "Ул. Золотая, 12",
+          "description": "Историческое здание на улице Золотой — одной из старейших улиц Курска, связанной с именами Николая II, певицы Плевицкой и дореволюционной торговлей.",
+          "address": "ул. Золотая, 12",
+          "coordinates": "51.736006, 36.189251",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.732269, 36.187850]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 5,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/5.jpg",
+          "thumbnail": "/place-thumbnails/sketches/5.jpg",
+          "name": "Костёл",
+          "description": "Римско-католический храм в Курске — единственная готическая церковь города. Здесь проходят органные концерты.",
+          "address": "ул. Марата, 31",
+          "coordinates": "51.732269, 36.187850",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.738995, 36.191852]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 6,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/6.jpg",
+          "thumbnail": "/place-thumbnails/sketches/6.jpg",
+          "name": "Драмтеатр",
+          "description": "Курский государственный драматический театр имени А.С. Пушкина — старейший театр Курска, основан в 1792 году.",
+          "address": "ул. Ленина, 26",
+          "coordinates": "51.738995, 36.191852",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.749788, 36.227698]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 7,
+        "balloonContent": {
+          "url": "https://t.me/zapishu_zarisuyu/761",
+          "image": "/place-thumbnails/sketches/7.jpg",
+          "thumbnail": "/place-thumbnails/sketches/7.jpg",
+          "name": "ЖД Вокзал",
+          "description": "Железнодорожный вокзал Курска — величественное здание в стиле сталинского ампира, построенное после Великой Отечественной войны.",
+          "address": "Привокзальная площадь, 1",
+          "coordinates": "51.749788, 36.227698",
+          "button": "Читать пост"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.733920, 36.184948]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 8,
+        "balloonContent": {
+          "url": "https://t.me/zapishu_zarisuyu/578",
+          "image": "/place-thumbnails/sketches/8.jpg",
+          "thumbnail": "/place-thumbnails/sketches/8.jpg",
+          "name": "Дом Семенова и Уфимцева",
+          "description": "Дом астронома Фёдора Алексеевича Семёнова и его внука Анатолия Уфимцева — изобретателя, построившего ветроэлектрическую станцию в 1931 году. На улице Семёновской сохранился дореволюционный почтовый ящик с надписью «для писем».",
+          "address": "ул. Семеновская, 14",
+          "coordinates": "51.733920, 36.184948",
+          "button": "Читать пост"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.725961, 36.192052]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 9,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/9.jpg",
+          "thumbnail": "/place-thumbnails/sketches/9.jpg",
+          "name": "Свиридовский",
+          "description": "Концертный зал имени Г.В. Свиридова — место проведения классических концертов и культурных мероприятий Курска.",
+          "address": "ул. Сонина, 4",
+          "coordinates": "51.725961, 36.192052",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.748637, 36.196642]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 10,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/10.jpg",
+          "thumbnail": "/place-thumbnails/sketches/10.jpg",
+          "name": "Филармония",
+          "description": "Курская государственная филармония — один из главных концертных залов города, расположенный в историческом здании.",
+          "address": "ул. Перекальского, 1",
+          "coordinates": "51.748637, 36.196642",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.727990, 36.174483]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 11,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/11.jpg",
+          "thumbnail": "/place-thumbnails/sketches/11.jpg",
+          "name": "Ул. Щепкина, 27",
+          "description": "Историческое здание на улице Щепкина.",
+          "address": "ул. Щепкина, 27",
+          "coordinates": "51.727990, 36.174483",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 12,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.727790, 36.174725]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 12,
+        "balloonContent": {
+          "url": "https://t.me/zapishu_zarisuyu/487",
+          "image": "/place-thumbnails/sketches/12.jpg",
+          "thumbnail": "/place-thumbnails/sketches/12.jpg",
+          "name": "Ул. Щепкина, 25",
+          "description": "Фрагмент древнего города — дубовый дом конца XIX — начала XX века, принадлежавший архивисту Г.Н. Бочарёву, служащему Курской казённой палаты. Редкий пример дубовой постройки с резными декоративными деталями, которому больше 100 лет.",
+          "address": "ул. Щепкина, 25",
+          "coordinates": "51.727790, 36.174725",
+          "button": "Читать пост"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 13,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.725233, 36.174121]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 13,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/13.jpg",
+          "thumbnail": "/place-thumbnails/sketches/13.jpg",
+          "name": "Ул. Ломоносова, 7",
+          "description": "Историческое здание на улице Ломоносова.",
+          "address": "ул. Ломоносова, 7",
+          "coordinates": "51.725233, 36.174121",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 14,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.724872, 36.177492]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 14,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/14.jpg",
+          "thumbnail": "/place-thumbnails/sketches/14.jpg",
+          "name": "Кинотеатр Щепкина",
+          "description": "Бывший кинотеатр на улице Дзержинского — историческое здание, отреставрированное в последние годы.",
+          "address": "ул. Дзержинского, 51",
+          "coordinates": "51.724872, 36.177492",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 15,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.733441, 36.193302]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 15,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/15.jpg",
+          "thumbnail": "/place-thumbnails/sketches/15.jpg",
+          "name": "Дом книги",
+          "description": "Курский дом книги — один из главных книжных магазинов города, расположенный в историческом здании на улице Ленина.",
+          "address": "ул. Ленина, 11",
+          "coordinates": "51.733441, 36.193302",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 16,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.731053, 36.185406]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 16,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/16.jpg",
+          "thumbnail": "/place-thumbnails/sketches/16.jpg",
+          "name": "Ул. Ендовищенская, 27",
+          "description": "Историческое здание на улице Ендовищенской.",
+          "address": "ул. Ендовищенская, 27",
+          "coordinates": "51.731053, 36.185406",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 17,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.726947, 36.191129]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 17,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/17.jpg",
+          "thumbnail": "/place-thumbnails/sketches/17.jpg",
+          "name": "Мужская гимназия",
+          "description": "Здание бывшей мужской гимназии на улице Луначарского — памятник архитектуры дореволюционного Курска.",
+          "address": "ул. Луначарского, 10",
+          "coordinates": "51.726947, 36.191129",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 18,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.728431, 36.188128]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 18,
+        "balloonContent": {
+          "url": "https://t.me/zapishu_zarisuyu/344",
+          "image": "/place-thumbnails/sketches/18.jpg",
+          "thumbnail": "/place-thumbnails/sketches/18.jpg",
+          "name": "Дом моды Веры Геппы",
+          "description": "Здание с богатой историей: в разное время здесь располагались электротеатр (немое кино), рабочий клуб, агитационный театр, ресторан с оркестром, казино, кинотеатр в годы нацистской оккупации, клуб для глухих и розничные магазины. Сегодня — дом моды Веры Геппы.",
+          "address": "ул. Дзержинского, 17",
+          "coordinates": "51.728431, 36.188128",
+          "button": "Читать пост"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 19,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.660125, 35.667064]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 19,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/19.jpg",
+          "thumbnail": "/place-thumbnails/sketches/19.jpg",
+          "name": "Церковь Серафима Саровского",
+          "description": "Православная церковь в Курчатове, посвящённая преподобному Серафиму Саровскому.",
+          "address": "ул. Энергетиков, 2г, Курчатов",
+          "coordinates": "51.660125, 35.667064",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 20,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.654630, 35.673277]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 20,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/20.jpg",
+          "thumbnail": "/place-thumbnails/sketches/20.jpg",
+          "name": "Памятник жертвам Чернобыля",
+          "description": "Памятник жертвам Чернобыльской катастрофы и других радиационных аварий в Курчатове — городе, неразрывно связанном с атомной энергетикой.",
+          "address": "ул. Мира, Курчатов",
+          "coordinates": "51.654630, 35.673277",
+          "button": ""
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 21,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [51.661238, 35.651005]
+      },
+      "properties": {
+        "type": "sketch",
+        "id": 21,
+        "balloonContent": {
+          "url": "",
+          "image": "/place-thumbnails/sketches/21.jpg",
+          "thumbnail": "/place-thumbnails/sketches/21.jpg",
+          "name": "Мирный атом",
+          "description": "Символ Курчатова — монумент «Мирный атом», олицетворяющий мирное использование ядерной энергии и историю Курской АЭС.",
+          "address": "Курчатов",
+          "coordinates": "51.661238, 35.651005",
+          "button": ""
+        }
+      }
+    }
+  ]
+}
